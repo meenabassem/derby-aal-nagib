@@ -1,0 +1,15 @@
+{
+    "providers": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-derbyaalnagib-dev-195038-authRole",
+            "UnauthRoleArn": "arn:aws:iam::172691363589:role/amplify-derbyaalnagib-dev-195038-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::172691363589:role/amplify-derbyaalnagib-dev-195038-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-derbyaalnagib-dev-195038-deployment",
+            "UnauthRoleName": "amplify-derbyaalnagib-dev-195038-unauthRole",
+            "StackName": "amplify-derbyaalnagib-dev-195038",
+            "StackId": "arn:aws:cloudformation:us-east-1:172691363589:stack/amplify-derbyaalnagib-dev-195038/442e23c0-b643-11ea-8c44-0e765a9edd1f",
+            "AmplifyAppId": "d1waoj4idlw1px"
+        }
+    }
+}
