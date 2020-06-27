@@ -1,0 +1,12 @@
+//Mostly on desktops
+.homeImageSliderContainer {
+  height: 350px;
+  margin-bottom: 50px;
+}
+
+//On small screens
+@media only screen and (max-height: 600px) {
+  .homeImageSliderContainer {
+    height: 200px;
+  }
+}
