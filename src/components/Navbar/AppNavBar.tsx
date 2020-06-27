@@ -2,9 +2,16 @@ import React from "react";
 import {Nav, Navbar, NavDropdown} from "react-bootstrap";
 import Logo from "assets/img/logo-transparent.png";
 
-const NavBar = () => {
+const AppNavBar = () => {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      bg="light"
+      variant="light"
+      sticky="top"
+      style={{ boxShadow: "0 0px 5px #888888" }}
+    >
       <Navbar.Brand href="/">
         <img
           src={Logo}
@@ -64,4 +71,4 @@ const NavBar = () => {
   );
 };
 
-export { NavBar };
+export { AppNavBar };

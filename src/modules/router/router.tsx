@@ -1,9 +1,9 @@
 import React from "react";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Tab2 from "../../pages/Tab2";
-
-import {NavBar} from "components/Navbar/Navbar";
+import {AppNavBar} from "components/Navbar/AppNavBar";
 import {HomePage} from "pages/Home/HomePage";
+import {AppFooter} from "components/Footer/AppFooter";
 
 const Tab4 = () => {
   return <div>Tab4</div>;
@@ -12,7 +12,7 @@ const Tab4 = () => {
 const AppRouter: React.FC = () => {
   return (
     <Router>
-      <NavBar />
+      <AppNavBar />
       <Switch>
         <Route path="/">
           <HomePage />
@@ -24,6 +24,7 @@ const AppRouter: React.FC = () => {
           <Tab2 />
         </Route>
       </Switch>
+      <AppFooter />
     </Router>
   );
 };

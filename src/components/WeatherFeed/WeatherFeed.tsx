@@ -2,7 +2,7 @@ import React from "react";
 
 const WeatherFeed: React.FC = () => {
   return (
-    <div>
+    <div style={{ display: "block", margin: "20px auto" }} >
       <a
         target="_blank"
         rel="noopener noreferrer"
