@@ -1,10 +1,11 @@
 import React from "react";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import {Nav, Navbar, NavDropdown} from "react-bootstrap";
 import Logo from "assets/img/logo-transparent.png";
+
 const NavBar = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-      <Navbar.Brand href="#home">
+      <Navbar.Brand href="/">
         <img
           src={Logo}
           width="50"
@@ -13,12 +14,11 @@ const NavBar = () => {
           alt={""}
         />
       </Navbar.Brand>
-      <Navbar.Brand href="#"> DERBY AAL NAGIB</Navbar.Brand>
+      <Navbar.Brand href="/"> DERBY AAL NAGIB</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <NavDropdown title="The Race" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Home</NavDropdown.Item>
+          <NavDropdown title="Home" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.2">News</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.3">About</NavDropdown.Item>
           </NavDropdown>
