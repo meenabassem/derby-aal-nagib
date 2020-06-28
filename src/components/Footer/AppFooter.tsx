@@ -34,7 +34,7 @@ const AppFooter = () => {
               rel="noopener noreferrer"
               href="https://www.linkedin.com/in/meenabassem/"
             >
-              Meena Bassem
+              Alpha M.s
             </a>
             © 2020
           </div>
