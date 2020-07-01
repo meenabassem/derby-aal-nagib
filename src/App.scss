@@ -1,0 +1,6 @@
+.page-body-container {
+  padding: 2%; // for desktop
+  @media only screen and (max-width: 600px) {
+    padding: 4%; //for phones
+  }
+}
