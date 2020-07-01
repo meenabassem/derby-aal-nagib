@@ -1,4 +1,5 @@
 import React from "react";
+import "App.scss";
 import "./TermsAndConditions.scss";
 
 const TermsAndConditionsPage = () => {
@@ -13,7 +14,7 @@ const TermsAndConditionsPage = () => {
     "During the period of quarantine and prior to any pigeons being shipped to Zimbabwe an entrant will have the opportunity to send replacement birds should any die or need replacing. Advice of the need to replace must come from your designated VFWCPR agent and onus of liaison about replacements rests with the entrant. No replacements can be shipped from abroad after the last scheduled intake organised by the respective agents. Replacements can be taken from “For Sale” pigeons for a donation of USD 50 which will go to the Wildlife Trust. If taken no guarantee is given on the birds’ performance and survival."
   ];
   return (
-    <div className={"terms-and-conditions-top-container"}>
+    <div className={"terms-and-conditions-top-container page-body-container"}>
       <h3>Terms and conditions VFWCPR – 2019 entrants for 2020 race series</h3>
       <ol>
         {terms.map((term, termIndex) => (

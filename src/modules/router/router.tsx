@@ -5,6 +5,8 @@ import {AppNavBar} from "components/Navbar/AppNavBar";
 import {HomePage} from "pages/Home/HomePage";
 import {AppFooter} from "components/Footer/AppFooter";
 import {TermsAndConditionsPage} from "pages/Terms/TermsAndConditions/TermsAndConditionsPage";
+import {Agents} from "pages/Contact/Agents/Agents";
+import {Enquiries} from "pages/Contact/Enquiries/Enquiries";
 
 const Tab4 = () => {
   return <div>Tab4</div>;
@@ -19,6 +21,8 @@ const AppRouter = () => {
           path="/terms/terms-and-conditions"
           children={<TermsAndConditionsPage />}
         />
+        <Route path="/contact/agents" children={<Agents />} />
+        <Route path="/contact/enquiries" children={<Enquiries />} />
         <Route path="/about">
           <Tab4 />
         </Route>

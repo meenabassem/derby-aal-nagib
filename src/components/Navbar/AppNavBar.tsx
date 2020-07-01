@@ -54,8 +54,8 @@ const AppNavBar = () => {
             <NavDropdown.Item href="#action/3.2">....</NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Contact" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Agents</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Enquiries</NavDropdown.Item>
+            <NavDropdown.Item href="/contact/agents">Agents</NavDropdown.Item>
+            <NavDropdown.Item href="/contact/enquiries">Enquiries</NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Login" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">
