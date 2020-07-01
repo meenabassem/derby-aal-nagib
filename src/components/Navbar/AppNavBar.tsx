@@ -55,7 +55,9 @@ const AppNavBar = () => {
           </NavDropdown>
           <NavDropdown title="Contact" id="basic-nav-dropdown">
             <NavDropdown.Item href="/contact/agents">Agents</NavDropdown.Item>
-            <NavDropdown.Item href="/contact/enquiries">Enquiries</NavDropdown.Item>
+            <NavDropdown.Item href="/contact/enquiries">
+              Enquiries
+            </NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Login" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">
@@ -63,7 +65,16 @@ const AppNavBar = () => {
             </NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Agent Login</NavDropdown.Item>
           </NavDropdown>
-          {/*<Nav.Link href="#features">Features</Nav.Link>*/}
+          {/*<Nav.Link href="/live" style={{ backgroundColor: "red" }}>*/}
+          {/*  Live*/}
+          {/*</Nav.Link>*/}
+          <Navbar.Brand
+            href="/live"
+            style={{ backgroundColor: "red", padding: "5px 20px" }}
+          >
+            Live
+          </Navbar.Brand>
+
           {/*<Nav.Link href="#pricing">Pricing</Nav.Link>*/}
         </Nav>
       </Navbar.Collapse>

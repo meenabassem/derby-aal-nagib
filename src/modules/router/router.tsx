@@ -7,6 +7,7 @@ import {AppFooter} from "components/Footer/AppFooter";
 import {TermsAndConditionsPage} from "pages/Terms/TermsAndConditions/TermsAndConditionsPage";
 import {Agents} from "pages/Contact/Agents/Agents";
 import {Enquiries} from "pages/Contact/Enquiries/Enquiries";
+import {LivePage} from "pages/Live/LivePage";
 
 const Tab4 = () => {
   return <div>Tab4</div>;
@@ -23,6 +24,8 @@ const AppRouter = () => {
         />
         <Route path="/contact/agents" children={<Agents />} />
         <Route path="/contact/enquiries" children={<Enquiries />} />
+        <Route path="/live" children={<LivePage />} />
+
         <Route path="/about">
           <Tab4 />
         </Route>
