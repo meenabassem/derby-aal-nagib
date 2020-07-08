@@ -43,8 +43,8 @@ const AppNavBar = () => {
             </NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Gallery" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Picture</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Videos</NavDropdown.Item>
+            <NavDropdown.Item href="/gallery/pictures">Picture</NavDropdown.Item>
+            <NavDropdown.Item href="/gallery/videos">Videos</NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Terms" id="basic-nav-dropdown">
             <NavDropdown.Item href="/terms/terms-and-conditions">
