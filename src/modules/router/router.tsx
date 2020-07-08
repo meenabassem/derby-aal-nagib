@@ -29,7 +29,7 @@ const AppRouter = () => {
         <Route path="/live" children={<LivePage />} />
 
         <Route path="/gallery/pictures" children={<Gallery_PicturesPage />} />
-        <Route path="/gallery/videos" children={Gallery_VideosPage} />
+        <Route path="/gallery/videos" children={<Gallery_VideosPage />} />
         <Route path="/about">
           <Tab4 />
         </Route>
