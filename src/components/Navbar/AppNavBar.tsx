@@ -43,7 +43,9 @@ const AppNavBar = () => {
             </NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Gallery" id="basic-nav-dropdown">
-            <NavDropdown.Item href="/gallery/pictures">Picture</NavDropdown.Item>
+            <NavDropdown.Item href="/gallery/pictures">
+              Picture
+            </NavDropdown.Item>
             <NavDropdown.Item href="/gallery/videos">Videos</NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Terms" id="basic-nav-dropdown">
@@ -52,6 +54,7 @@ const AppNavBar = () => {
             </NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Prize Money</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">....</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.2">Forms</NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Contact" id="basic-nav-dropdown">
             <NavDropdown.Item href="/contact/agents">Agents</NavDropdown.Item>
@@ -60,10 +63,10 @@ const AppNavBar = () => {
             </NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Login" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">
+            <NavDropdown.Item href="/login/agent">Agent Login</NavDropdown.Item>
+            <NavDropdown.Item href="/login/fancier">
               Fancier Login
             </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Agent Login</NavDropdown.Item>
           </NavDropdown>
           {/*<Nav.Link href="/live" style={{ backgroundColor: "red" }}>*/}
           {/*  Live*/}

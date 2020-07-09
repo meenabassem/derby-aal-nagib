@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {shuffle} from "lodash";
 import "App.scss";
 import {Card, Col, Row} from "react-bootstrap";
-import {Gallery_PictureModal} from "pages/Gallery_Pictures/Gallery_PictureModal";
+import {GalleryPictureModal} from "pages/Gallery_Pictures/GalleryPictureModal";
 
 const _albumImages: string[] = [
   "https://www.victoriafallswcpr.com/images/gallery/Activities/Boyd%208.JPG",
@@ -83,7 +83,7 @@ interface Album {
   image: any;
 }
 
-const Gallery_PicturesPage = () => {
+const GalleryPictureModalProps = () => {
   const [albums, setAlbums] = useState<Album[]>([]);
   const [images, setImages] = useState<string[]>([]);
   const [currentAlbum, setCurrentAlbum] = useState<Album>();
@@ -167,7 +167,7 @@ const Gallery_PicturesPage = () => {
       ) : (
         <></>
       )}
-      <Gallery_PictureModal
+      <GalleryPictureModal
         show={isPictureModalVisible}
         imageUrl={clickedImage}
         onHide={() => setPictureModalVisible(false)}
@@ -175,4 +175,4 @@ const Gallery_PicturesPage = () => {
     </div>
   );
 };
-export { Gallery_PicturesPage };
+export { GalleryPictureModalProps };

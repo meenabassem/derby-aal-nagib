@@ -14,7 +14,7 @@ const _videoLinks: string[] = [
   "79TX16AGYBM"
 ];
 
-const Gallery_VideosPage = () => {
+const GalleryVideosPage = () => {
   const containerWidth =
     (window?.innerWidth > 500 ? 500 : window.innerWidth) - 50;
 
@@ -54,4 +54,4 @@ const Gallery_VideosPage = () => {
     </div>
   );
 };
-export { Gallery_VideosPage };
+export { GalleryVideosPage };

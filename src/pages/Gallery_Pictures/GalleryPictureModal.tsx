@@ -2,13 +2,13 @@ import React from "react";
 import {Image, Modal} from "react-bootstrap";
 import "./Gallery_PictureModal.scss";
 
-interface Gallery_PictureModalProps {
+interface GalleryPictureModalProps {
   show: boolean;
   imageUrl: string;
   onHide: () => void;
 }
 
-const Gallery_PictureModal = (props: Gallery_PictureModalProps) => {
+const GalleryPictureModal = (props: GalleryPictureModalProps) => {
   const { imageUrl, show, onHide } = props;
   return (
     <Modal
@@ -25,4 +25,4 @@ const Gallery_PictureModal = (props: Gallery_PictureModalProps) => {
     </Modal>
   );
 };
-export { Gallery_PictureModal };
+export { GalleryPictureModal };
