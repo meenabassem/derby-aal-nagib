@@ -27,10 +27,10 @@ const AppNavBar = () => {
         <Nav className="mr-auto">
           <NavDropdown title="Home" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.2">News</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">About</NavDropdown.Item>
+            <NavDropdown.Item href="/about">About</NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Results" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Results</NavDropdown.Item>
+            <NavDropdown.Item href="/results/all">All Results</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Ace Bird</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.3">
               Grand Averages
@@ -43,15 +43,18 @@ const AppNavBar = () => {
             </NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Gallery" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Picture</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Videos</NavDropdown.Item>
+            <NavDropdown.Item href="/gallery/pictures">
+              Picture
+            </NavDropdown.Item>
+            <NavDropdown.Item href="/gallery/videos">Videos</NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Terms" id="basic-nav-dropdown">
             <NavDropdown.Item href="/terms/terms-and-conditions">
               Terms & Conditions
             </NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Prize Money</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">....</NavDropdown.Item>
+            <NavDropdown.Item href="_">....</NavDropdown.Item>
+            <NavDropdown.Item href="/terms/forms">Forms</NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Contact" id="basic-nav-dropdown">
             <NavDropdown.Item href="/contact/agents">Agents</NavDropdown.Item>
@@ -60,10 +63,10 @@ const AppNavBar = () => {
             </NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Login" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">
+            <NavDropdown.Item href="/login/agent">Agent Login</NavDropdown.Item>
+            <NavDropdown.Item href="/login/fancier">
               Fancier Login
             </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Agent Login</NavDropdown.Item>
           </NavDropdown>
           {/*<Nav.Link href="/live" style={{ backgroundColor: "red" }}>*/}
           {/*  Live*/}

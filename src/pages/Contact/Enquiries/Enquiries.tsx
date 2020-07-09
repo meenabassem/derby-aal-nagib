@@ -64,7 +64,7 @@ const Enquiries = () => {
                   value={values.name}
                   onChange={handleChange}
                   required
-                  isInvalid={!!errors.name}
+                  isInvalid={!!touched.name && !!errors.name}
                 />
                 <Form.Control.Feedback type="invalid">
                   {errors.name}
@@ -78,7 +78,7 @@ const Enquiries = () => {
                   required
                   value={values.email}
                   onChange={handleChange}
-                  isInvalid={!!errors.email}
+                  isInvalid={!!touched.email && !!errors.email}
                 />
                 <Form.Control.Feedback type="invalid">
                   {errors.email}
@@ -102,7 +102,7 @@ const Enquiries = () => {
                 required
                 value={values.message}
                 onChange={handleChange}
-                isInvalid={!!errors.message}
+                isInvalid={!!touched.message && !!errors.message}
               />
               <Form.Control.Feedback type="invalid">
                 {errors.message}
