@@ -13,6 +13,7 @@ import {GalleryVideosPage} from "pages/Gallery_Videos/GalleryVideosPage";
 import {AgentLoginPage} from "pages/Login/AgentLogin";
 import {FancierLoginPage} from "pages/Login/FancierLogin";
 import {FormDownloadsPage} from "pages/FormDownloads/FormDownloadsPage";
+import {AboutPage} from "pages/About/AboutPage";
 
 const Tab4 = () => {
   return <div>Tab4</div>;
@@ -36,11 +37,10 @@ const AppRouter = () => {
           children={<GalleryPictureModalProps />}
         />
         <Route path="/gallery/videos" children={<GalleryVideosPage />} />
-        <Route path="/about">
-          <Tab4 />
-        </Route>
+
         <Route path="/login/agent" children={<AgentLoginPage />} />
         <Route path="/login/fancier" children={<FancierLoginPage />} />
+        <Route path="/about" children={<AboutPage />} />
         <Route path="/users">
           <Tab2 />
         </Route>

@@ -27,7 +27,7 @@ const AppNavBar = () => {
         <Nav className="mr-auto">
           <NavDropdown title="Home" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.2">News</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">About</NavDropdown.Item>
+            <NavDropdown.Item href="/about">About</NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Results" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Results</NavDropdown.Item>
