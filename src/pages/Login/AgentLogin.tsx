@@ -3,6 +3,7 @@ import {Formik} from "formik";
 import {useHistory} from "react-router-dom";
 import * as yup from "yup";
 import {Button, Card, Col, Form} from "react-bootstrap";
+import "App.scss";
 
 const schema = yup.object({
   email: yup

@@ -12,6 +12,7 @@ import {GalleryPictureModalProps} from "pages/Gallery_Pictures/GalleyPicturesPag
 import {GalleryVideosPage} from "pages/Gallery_Videos/GalleryVideosPage";
 import {AgentLoginPage} from "pages/Login/AgentLogin";
 import {FancierLoginPage} from "pages/Login/FancierLogin";
+import {FormDownloadsPage} from "pages/FormDownloads/FormDownloadsPage";
 
 const Tab4 = () => {
   return <div>Tab4</div>;
@@ -26,11 +27,14 @@ const AppRouter = () => {
           path="/terms/terms-and-conditions"
           children={<TermsAndConditionsPage />}
         />
+        <Route path="/terms/forms" children={<FormDownloadsPage />} />
         <Route path="/contact/agents" children={<Agents />} />
         <Route path="/contact/enquiries" children={<Enquiries />} />
         <Route path="/live" children={<LivePage />} />
-
-        <Route path="/gallery/pictures" children={<GalleryPictureModalProps />} />
+        <Route
+          path="/gallery/pictures"
+          children={<GalleryPictureModalProps />}
+        />
         <Route path="/gallery/videos" children={<GalleryVideosPage />} />
         <Route path="/about">
           <Tab4 />

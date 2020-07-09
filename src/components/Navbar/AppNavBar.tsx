@@ -53,8 +53,8 @@ const AppNavBar = () => {
               Terms & Conditions
             </NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Prize Money</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">....</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Forms</NavDropdown.Item>
+            <NavDropdown.Item href="_">....</NavDropdown.Item>
+            <NavDropdown.Item href="/terms/forms">Forms</NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Contact" id="basic-nav-dropdown">
             <NavDropdown.Item href="/contact/agents">Agents</NavDropdown.Item>
