@@ -30,6 +30,7 @@ const AppNavBar = () => {
             <NavDropdown.Item href="/about">About</NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Results" id="basic-nav-dropdown">
+            <NavDropdown.Item href="/Events/all">All Events</NavDropdown.Item>
             <NavDropdown.Item href="/results/all">All Results</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Ace Bird</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.3">

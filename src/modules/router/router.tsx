@@ -14,6 +14,7 @@ import {FancierLoginPage} from "pages/Login/FancierLogin";
 import {FormDownloadsPage} from "pages/FormDownloads/FormDownloadsPage";
 import {AboutPage} from "pages/About/AboutPage";
 import {ResultsAll} from "pages/Results/ResultsAll";
+import {AllEvents} from "pages/Results/AllEvents";
 
 const AppRouter = () => {
   return (
@@ -21,6 +22,7 @@ const AppRouter = () => {
       <AppNavBar />
       <Switch>
         <Route path="/results/all" children={<ResultsAll />} />
+        <Route path="/Events/all" children={<AllEvents />} />
 
         <Route
           path="/gallery/pictures"

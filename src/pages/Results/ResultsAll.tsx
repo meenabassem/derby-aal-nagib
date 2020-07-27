@@ -2,56 +2,57 @@ import React, {useEffect, useState} from "react";
 import "App.scss";
 import "./Results.scss";
 import {Button, Table} from "react-bootstrap";
-import moment from "moment";
-import {shuffle} from "lodash";
 import {useHistory} from "react-router-dom";
+import {NetworkHelper} from "modules/network/NetworkHelper";
 
 //Race & Training results
 
 interface ResultsAllTableRowEntry {
-  raceId: string | number;
-  event: string;
-  date: string | Date;
-  liberation: string;
-  distance: string;
-  status: "Finished" | string;
+  _id: string;
+  EVENT: string;
+  Date: string | Date;
+  Liberation: string;
+  Distance: string;
+  Status: "Finished" | string;
+
   Basketing?: boolean;
+  raceId?: string | number;
   Results?: boolean;
   Prizes?: boolean;
 }
 
-let results: ResultsAllTableRowEntry[] = [
-  {
-    raceId: String(new Date().getTime()).substr(4, 10),
-    event: "Training Flight 25",
-    date: moment(new Date()).format("l h:mm:ss"),
-    liberation: "Kazangula Road",
-    status: "Finished",
-    distance: "60km",
-    Basketing: true
-  },
-  {
-    raceId: String(new Date().getTime()).substr(4, 10),
-    event: "Training Flight 25",
-    date: moment(new Date()).format("l h:mm:ss"),
-    liberation: "Kazangula Road",
-    status: "Finished",
-    distance: "20km",
-    Basketing: true,
-    Results: true
-  },
-  {
-    raceId: String(new Date().getTime()).substr(4, 10),
-    event: "Training Flight 25",
-    date: moment(new Date()).format("l h:mm:ss"),
-    liberation: "Kazangula Road",
-    status: "Finished",
-    distance: "30km",
-    Basketing: true,
-    Results: true,
-    Prizes: true
-  }
-];
+// let results: ResultsAllTableRowEntry[] = [
+//   {
+//     raceId: String(new Date().getTime()).substr(4, 10),
+//     Event: "Training Flight 25",
+//     Date: moment(new Date()).format("l h:mm:ss"),
+//     Liberation: "Kazangula Road",
+//     Status: "Finished",
+//     Distance: "60km",
+//     Basketing: true
+//   },
+//   {
+//     raceId: String(new Date().getTime()).substr(4, 10),
+//     Event: "Training Flight 25",
+//     Date: moment(new Date()).format("l h:mm:ss"),
+//     Liberation: "Kazangula Road",
+//     Status: "Finished",
+//     Distance: "20km",
+//     Basketing: true,
+//     Results: true
+//   },
+//   {
+//     raceId: String(new Date().getTime()).substr(4, 10),
+//     Event: "Training Flight 25",
+//     Date: moment(new Date()).format("l h:mm:ss"),
+//     Liberation: "Kazangula Road",
+//     Status: "Finished",
+//     Distance: "30km",
+//     Basketing: true,
+//     Results: true,
+//     Prizes: true
+//   }
+// ];
 
 interface ActionButtonProps {
   buttonType: "Basketing" | "Results" | "Prizes";
@@ -65,6 +66,7 @@ const ActionButton = (props: ActionButtonProps) => {
     switch (buttonType) {
       case "Basketing":
         console.log("Basketing", raceId);
+        history.push("/");
         break;
       case "Prizes":
         console.log("Prizes", raceId);
@@ -89,27 +91,38 @@ const ActionButton = (props: ActionButtonProps) => {
 };
 
 const ResultsAll = () => {
-  const [allResults, setAllResults] = useState<ResultsAllTableRowEntry[]>(
-    results
-  );
-
+  const [allResults, setAllResults] = useState<ResultsAllTableRowEntry[]>([]);
   useEffect(() => {
-    const _result = [
-      ...results,
-      ...results,
-      ...results,
-      ...results,
-      ...results,
-      ...results,
-      ...results,
-      ...results,
-      ...results,
-      ...results,
-      ...results,
-      ...results
-    ];
-    setAllResults(shuffle(_result));
+    console.log("get data from API");
+    NetworkHelper.get("/index")
+      .then(value => {
+        if (value?.data && value.data?.length) {
+          console.log("data", value.data);
+          setAllResults(value.data);
+        }
+      })
+      .catch(reason => {
+        console.log("Couldn't load results data");
+      });
   }, []);
+
+  // useEffect(() => {
+  //   const _result = [
+  //     ...results,
+  //     ...results,
+  //     ...results,
+  //     ...results,
+  //     ...results,
+  //     ...results,
+  //     ...results,
+  //     ...results,
+  //     ...results,
+  //     ...results,
+  //     ...results,
+  //     ...results
+  //   ];
+  //   setAllResults(shuffle(_result));
+  // }, []);
   // const [allResults, setAllResults] = useState<ResultsAllTableRowEntry[]>([]);
   return (
     <div className={"page-body-container results-page"}>
@@ -131,40 +144,41 @@ const ResultsAll = () => {
             {allResults.map(
               (resultItem: ResultsAllTableRowEntry, resultIndex: number) => {
                 const {
+                  _id,
                   raceId,
-                  event,
-                  date,
-                  liberation,
-                  status,
-                  distance,
+                  EVENT,
+                  Date,
+                  Liberation,
+                  Status,
+                  Distance,
                   Basketing,
                   Results,
                   Prizes
                 } = resultItem;
                 return (
                   <tr key={resultIndex}>
-                    <td>{event}</td>
-                    <td>{date}</td>
-                    <td>{liberation}</td>
-                    <td>{distance}</td>
-                    <td>{status}</td>
+                    <td>{EVENT}</td>
+                    <td>{Date}</td>
+                    <td>{Liberation}</td>
+                    <td>{Distance}</td>
+                    <td>{Status}</td>
                     <td>
-                      {Basketing || Results || Prizes ? (
+                      {true || Basketing || Results || Prizes ? (
                         <div style={{ display: "flex" }}>
                           <ActionButton
                             buttonType={"Basketing"}
-                            isAvailable={Basketing || false}
-                            raceId={raceId}
+                            isAvailable={Basketing || true}
+                            raceId={_id}
                           />{" "}
                           <ActionButton
                             buttonType={"Results"}
-                            isAvailable={Results || false}
-                            raceId={raceId}
+                            isAvailable={Results || true}
+                            raceId={_id}
                           />{" "}
                           <ActionButton
                             buttonType={"Prizes"}
-                            isAvailable={Prizes || false}
-                            raceId={raceId}
+                            isAvailable={Prizes || true}
+                            raceId={_id}
                           />
                         </div>
                       ) : (
