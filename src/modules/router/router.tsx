@@ -15,6 +15,7 @@ import {FormDownloadsPage} from "pages/FormDownloads/FormDownloadsPage";
 import {AboutPage} from "pages/About/AboutPage";
 import {EventResults} from "pages/Events/EventResults";
 import {AllEvents} from "pages/Events/AllEvents";
+import {EventBasketing} from "pages/Events/EventBasketing";
 
 const AppRouter = () => {
   return (
@@ -23,7 +24,7 @@ const AppRouter = () => {
       <Switch>
         {/*Basketing Events*/}
         <Route path="/results/events/:id" children={<EventResults />} />
-        <Route path="/results/basketing/:id" children={<EventResults />} />
+        <Route path="/results/basketing/:id" children={<EventBasketing />} />
         <Route path="/Events/all" children={<AllEvents />} />
 
         <Route
