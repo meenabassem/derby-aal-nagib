@@ -23,7 +23,7 @@ const EventResults = () => {
   const [allResults, setAllResults] = useState<ResultsAllTableRowEntry[]>([]);
   const { id } = useParams();
   useEffect(() => {
-    console.log("get Results from API");
+    console.log("get Events from API");
     NetworkHelper.get("/Results", {
       params: {
         id,

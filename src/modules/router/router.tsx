@@ -13,15 +13,15 @@ import {AgentLoginPage} from "pages/Login/AgentLogin";
 import {FancierLoginPage} from "pages/Login/FancierLogin";
 import {FormDownloadsPage} from "pages/FormDownloads/FormDownloadsPage";
 import {AboutPage} from "pages/About/AboutPage";
-import {EventResults} from "pages/Results/EventResults";
-import {AllEvents} from "pages/Results/AllEvents";
+import {EventResults} from "pages/Events/EventResults";
+import {AllEvents} from "pages/Events/AllEvents";
 
 const AppRouter = () => {
   return (
     <Router>
       <AppNavBar />
       <Switch>
-        {/*Basketing Results*/}
+        {/*Basketing Events*/}
         <Route path="/results/events/:id" children={<EventResults />} />
         <Route path="/results/basketing/:id" children={<EventResults />} />
         <Route path="/Events/all" children={<AllEvents />} />
