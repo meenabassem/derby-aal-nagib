@@ -10,6 +10,11 @@
             "StackName": "amplify-derbyaalnagib-dev-195038",
             "StackId": "arn:aws:cloudformation:us-east-1:172691363589:stack/amplify-derbyaalnagib-dev-195038/442e23c0-b643-11ea-8c44-0e765a9edd1f",
             "AmplifyAppId": "d1waoj4idlw1px"
+        },
+        "categories": {
+            "auth": {
+                "derbyaalnagib87e6f4cd": {}
+            }
         }
     }
 }

@@ -1,15 +1,38 @@
 {
-    "providers": {
-        "awscloudformation": {
-            "AuthRoleName": "amplify-derbyaalnagib-dev-195038-authRole",
-            "UnauthRoleArn": "arn:aws:iam::172691363589:role/amplify-derbyaalnagib-dev-195038-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::172691363589:role/amplify-derbyaalnagib-dev-195038-authRole",
-            "Region": "us-east-1",
-            "DeploymentBucketName": "amplify-derbyaalnagib-dev-195038-deployment",
-            "UnauthRoleName": "amplify-derbyaalnagib-dev-195038-unauthRole",
-            "StackName": "amplify-derbyaalnagib-dev-195038",
-            "StackId": "arn:aws:cloudformation:us-east-1:172691363589:stack/amplify-derbyaalnagib-dev-195038/442e23c0-b643-11ea-8c44-0e765a9edd1f",
-            "AmplifyAppId": "d1waoj4idlw1px"
-        }
-    }
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "amplify-derbyaalnagib-dev-195038-authRole",
+			"UnauthRoleArn": "arn:aws:iam::172691363589:role/amplify-derbyaalnagib-dev-195038-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::172691363589:role/amplify-derbyaalnagib-dev-195038-authRole",
+			"Region": "us-east-1",
+			"DeploymentBucketName": "amplify-derbyaalnagib-dev-195038-deployment",
+			"UnauthRoleName": "amplify-derbyaalnagib-dev-195038-unauthRole",
+			"StackName": "amplify-derbyaalnagib-dev-195038",
+			"StackId": "arn:aws:cloudformation:us-east-1:172691363589:stack/amplify-derbyaalnagib-dev-195038/442e23c0-b643-11ea-8c44-0e765a9edd1f",
+			"AmplifyAppId": "d1waoj4idlw1px"
+		}
+	},
+	"auth": {
+		"derbyaalnagib87e6f4cd": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false,
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-derbyaalnagib-dev-195038-deployment/amplify-cfn-templates/auth/derbyaalnagib87e6f4cd-cloudformation-template.yml",
+				"logicalId": "authderbyaalnagib87e6f4cd"
+			},
+			"lastPushTimeStamp": "2020-07-23T18:37:10.421Z",
+			"output": {
+				"AppClientSecret": "9ptn249g1q2v7bro7ut25evsabdttcmp1jq6ca0dn03sfcacpif",
+				"UserPoolId": "us-east-1_E853O6JBc",
+				"AppClientIDWeb": "3l1kgl6resa68l6j5v464n59t0",
+				"AppClientID": "6m029cumsb2fktjc48n6uaj3b",
+				"IdentityPoolId": "us-east-1:d4f4e380-6599-4020-b80a-6a58d15c8f96",
+				"IdentityPoolName": "derbyaalnagib87e6f4cd_identitypool_87e6f4cd__dev",
+				"UserPoolName": "derbyaalnagib87e6f4cd_userpool_87e6f4cd"
+			},
+			"lastPushDirHash": "cUYPAc004BaeOp4/e1qcdlTrCYg="
+		}
+	}
 }

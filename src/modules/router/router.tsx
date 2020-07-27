@@ -13,14 +13,19 @@ import {AgentLoginPage} from "pages/Login/AgentLogin";
 import {FancierLoginPage} from "pages/Login/FancierLogin";
 import {FormDownloadsPage} from "pages/FormDownloads/FormDownloadsPage";
 import {AboutPage} from "pages/About/AboutPage";
-import {ResultsAll} from "pages/Results/ResultsAll";
+import {EventResults} from "pages/Events/EventResults";
+import {AllEvents} from "pages/Events/AllEvents";
+import {EventBasketing} from "pages/Events/EventBasketing";
 
 const AppRouter = () => {
   return (
     <Router>
       <AppNavBar />
       <Switch>
-        <Route path="/results/all" children={<ResultsAll />} />
+        {/*Basketing Events*/}
+        <Route path="/results/events/:id" children={<EventResults />} />
+        <Route path="/results/basketing/:id" children={<EventBasketing />} />
+        <Route path="/Events/all" children={<AllEvents />} />
 
         <Route
           path="/gallery/pictures"
