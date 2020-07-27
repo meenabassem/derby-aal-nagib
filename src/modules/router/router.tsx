@@ -13,7 +13,7 @@ import {AgentLoginPage} from "pages/Login/AgentLogin";
 import {FancierLoginPage} from "pages/Login/FancierLogin";
 import {FormDownloadsPage} from "pages/FormDownloads/FormDownloadsPage";
 import {AboutPage} from "pages/About/AboutPage";
-import {ResultsAll} from "pages/Results/ResultsAll";
+import {EventResults} from "pages/Results/EventResults";
 import {AllEvents} from "pages/Results/AllEvents";
 
 const AppRouter = () => {
@@ -21,7 +21,9 @@ const AppRouter = () => {
     <Router>
       <AppNavBar />
       <Switch>
-        <Route path="/results/all" children={<ResultsAll />} />
+        {/*Basketing Results*/}
+        <Route path="/results/events/:id" children={<EventResults />} />
+        <Route path="/results/basketing/:id" children={<EventResults />} />
         <Route path="/Events/all" children={<AllEvents />} />
 
         <Route

@@ -27,11 +27,10 @@ const ActionButton = (props: ActionButtonProps) => {
   const onButtonClick = () => {
     switch (buttonType) {
       case "Basketing":
-        console.log("Basketing", eventId);
-        history.push("/");
+        history.push(`/results/basketing/${eventId}`);
         break;
       case "Results":
-        console.log("Results", eventId);
+        history.push(`/results/events/${eventId}`);
         break;
       default:
         break;
@@ -52,7 +51,6 @@ const AllEvents = () => {
     NetworkHelper.get("/Events")
       .then(value => {
         if (value?.data && value.data?.length) {
-          console.log("data", value.data);
           setAllEvents(value.data);
         }
       })
