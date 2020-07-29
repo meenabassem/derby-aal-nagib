@@ -6,6 +6,7 @@ import {useHistory} from "react-router-dom";
 import {NetworkHelper} from "modules/network/NetworkHelper";
 import * as yup from "yup";
 import {Formik} from "formik";
+import {ApiLoadedStatus} from "modules/network/ApiLoadedStatus";
 
 //Race & Training results
 
@@ -23,7 +24,6 @@ interface ActionButtonProps {
   buttonType: "Basketing" | "Results";
   eventId: string | number;
 }
-type ApiLoadedStatus = "LOADING" | "LOADED" | "ERROR" | "NO_RESULTS";
 const ActionButton = (props: ActionButtonProps) => {
   const history = useHistory();
   const { eventId, buttonType } = props;
