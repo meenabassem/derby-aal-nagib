@@ -5,7 +5,7 @@ import {Button, Col, Form, FormControl, InputGroup, Row, Table} from "react-boot
 import {useHistory} from "react-router-dom";
 import {NetworkHelper} from "modules/network/NetworkHelper";
 import * as yup from "yup";
-import {Formik} from "formik";
+import {Form as FormikForm, Formik} from "formik";
 import {ApiLoadedStatus} from "modules/network/ApiLoadedStatus";
 
 //Race & Training results
@@ -164,7 +164,7 @@ const AllEvents = () => {
             onSubmit={onSearchSubmit}
           >
             {({ handleSubmit, handleChange, values }) => (
-              <Form noValidate onSubmit={handleSubmit}>
+              <FormikForm noValidate onSubmit={handleSubmit}>
                 <Col>
                   <Form.Group controlId={"searchField"}>
                     <InputGroup className="mb-3">
@@ -183,7 +183,7 @@ const AllEvents = () => {
                     </InputGroup>
                   </Form.Group>
                 </Col>
-              </Form>
+              </FormikForm>
             )}
           </Formik>
         </Col>

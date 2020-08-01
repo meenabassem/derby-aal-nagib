@@ -8,7 +8,8 @@ import {NetworkHelper} from "modules/network/NetworkHelper";
 import ReactCountryFlag from "react-country-flag";
 
 import * as yup from "yup";
-import {Formik} from "formik";
+import {Form as FormikForm, Formik} from "formik";
+
 import {ApiLoadedStatus} from "modules/network/ApiLoadedStatus";
 
 //Race & Training results
@@ -149,7 +150,7 @@ const EventResults = () => {
             onSubmit={onSearchSubmit}
           >
             {({ handleSubmit, handleChange, values }) => (
-              <Form noValidate onSubmit={handleSubmit}>
+              <FormikForm noValidate onSubmit={handleSubmit}>
                 <Col>
                   <Form.Group controlId={"searchField"}>
                     <InputGroup className="mb-3">
@@ -168,7 +169,7 @@ const EventResults = () => {
                     </InputGroup>
                   </Form.Group>
                 </Col>
-              </Form>
+              </FormikForm>
             )}
           </Formik>
         </Col>
