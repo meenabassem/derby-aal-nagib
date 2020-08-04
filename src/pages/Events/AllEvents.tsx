@@ -5,7 +5,7 @@ import {Button, Col, Form, FormControl, InputGroup, Row, Table} from "react-boot
 import {useHistory} from "react-router-dom";
 import {NetworkHelper} from "modules/network/NetworkHelper";
 import * as yup from "yup";
-import {Formik} from "formik";
+import {Form as FormikForm, Formik} from "formik";
 import {ApiLoadedStatus} from "modules/network/ApiLoadedStatus";
 
 //Race & Training results
@@ -13,7 +13,7 @@ import {ApiLoadedStatus} from "modules/network/ApiLoadedStatus";
 interface EventsAllTableRowEntry {
   _id: string;
   Category: "Race" | "Training";
-  EVENT: string;
+  Event: string;
   Date: string;
   Liberation: string;
   Distance: string;
@@ -112,7 +112,7 @@ const AllEvents = () => {
                   const {
                     _id,
                     Category,
-                    EVENT,
+                    Event,
                     Date,
                     Liberation,
                     Status,
@@ -121,7 +121,7 @@ const AllEvents = () => {
                   return (
                     <tr key={resultIndex}>
                       <td>{Category}</td>
-                      <td>{EVENT}</td>
+                      <td>{Event}</td>
 
                       <td>{Date}</td>
                       <td>{Liberation}</td>
@@ -164,7 +164,7 @@ const AllEvents = () => {
             onSubmit={onSearchSubmit}
           >
             {({ handleSubmit, handleChange, values }) => (
-              <Form noValidate onSubmit={handleSubmit}>
+              <FormikForm noValidate onSubmit={handleSubmit}>
                 <Col>
                   <Form.Group controlId={"searchField"}>
                     <InputGroup className="mb-3">
@@ -183,7 +183,7 @@ const AllEvents = () => {
                     </InputGroup>
                   </Form.Group>
                 </Col>
-              </Form>
+              </FormikForm>
             )}
           </Formik>
         </Col>

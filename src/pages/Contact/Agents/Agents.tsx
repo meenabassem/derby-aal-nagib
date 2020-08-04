@@ -16,7 +16,7 @@ const Agents = () => {
         <Card.Body>
           <Card.Title>DERBY AAL NAGIB - EGYPT BRANCH</Card.Title>
           <Card.Text>Contact our branch in Egypt via</Card.Text>
-          <Button variant="primary" href={"mailto:mail@example.com"}>
+          <Button variant="primary" href={"mailto:info@derbyaalnagib.com"}>
             Email
           </Button>{" "}
           <Button variant="primary" href={"tel:+201234567890"}>

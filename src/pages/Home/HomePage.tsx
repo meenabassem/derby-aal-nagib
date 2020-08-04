@@ -1,11 +1,12 @@
 import React from "react";
-import {FacebookFeed} from "components/FacebookFeed/FacebookFeed";
-import {WeatherFeed} from "components/WeatherFeed/WeatherFeed";
 import {HomeImageSlider} from "components/HomeImageSlider/HomeImageSlider";
 import "./HomePage.scss";
 import {Container, Row} from "react-bootstrap";
-import {TopStoriesComponent} from "components/TopStories/TopStoriesComponent";
 import {TopStoriesListItemProps} from "components/TopStories/TopStoriesListItem";
+import {CountDownTimer} from "components/CountDownTimer/CountDownTimer";
+import {TopStoriesComponent} from "components/TopStories/TopStoriesComponent";
+import {FacebookFeed} from "components/FacebookFeed/FacebookFeed";
+import {WeatherFeed} from "components/WeatherFeed/WeatherFeed";
 
 const HomePage = () => {
   const imageSliderImages = [
@@ -43,7 +44,14 @@ const HomePage = () => {
       <Container fluid>
         <Row>
           <TopStoriesComponent stories={stories} />
+          <CountDownTimer
+            title={"Final Race Date"}
+            endDate={new Date("2020-08-12T00:00:00+02:00")}
+          />
+        </Row>
+        <Row>
           <FacebookFeed />
+
           <WeatherFeed />
         </Row>
       </Container>

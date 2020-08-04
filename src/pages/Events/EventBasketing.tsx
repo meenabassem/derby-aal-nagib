@@ -5,10 +5,12 @@ import {Button, Col, Form, FormControl, InputGroup, Row, Table} from "react-boot
 import {useParams} from "react-router-dom";
 import {NetworkHelper} from "modules/network/NetworkHelper";
 import * as yup from "yup";
-import {Formik} from "formik";
-import {ApiLoadedStatus} from "modules/network/ApiLoadedStatus";
+import {Form as FormikForm, Formik} from "formik";
 
+import {ApiLoadedStatus} from "modules/network/ApiLoadedStatus";
 // @ts-ignore
+import ReactCountryFlag from "react-country-flag";
+
 //Race & Training results
 type stringOrNumber = string | number;
 interface ResultsBasketingTableRowEntry {
@@ -96,7 +98,17 @@ const EventBasketing = () => {
                     <tr key={resultIndex}>
                       <td>{Fancier}</td>
                       <td>{Team}</td>
-                      <td>{Country}</td>
+                      <td>
+                        {" "}
+                        <ReactCountryFlag
+                          countryCode={Country}
+                          svg
+                          style={{
+                            fontSize: "2em",
+                            lineHeight: "2em"
+                          }}
+                        />
+                      </td>
                       <td>{Pigeon}</td>
                       <td>{resultItem["Pigeon Name"]}</td>
                       <td>{resultItem["Basket Time"]}</td>
@@ -129,7 +141,7 @@ const EventBasketing = () => {
             onSubmit={onSearchSubmit}
           >
             {({ handleSubmit, handleChange, values }) => (
-              <Form noValidate onSubmit={handleSubmit}>
+              <FormikForm noValidate onSubmit={handleSubmit}>
                 <Col>
                   <Form.Group controlId={"searchField"}>
                     <InputGroup className="mb-3">
@@ -148,7 +160,7 @@ const EventBasketing = () => {
                     </InputGroup>
                   </Form.Group>
                 </Col>
-              </Form>
+              </FormikForm>
             )}
           </Formik>
         </Col>
