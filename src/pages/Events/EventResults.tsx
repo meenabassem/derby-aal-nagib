@@ -16,7 +16,7 @@ import {ApiLoadedStatus} from "modules/network/ApiLoadedStatus";
 type stringOrNumber = string | number;
 interface ResultsAllTableRowEntry {
   _id: stringOrNumber;
-  RANK: stringOrNumber;
+  Rank: stringOrNumber;
   Fancier: string;
   Team: string;
   Country: string;
@@ -94,7 +94,7 @@ const EventResults = () => {
                 (resultItem: ResultsAllTableRowEntry, resultIndex: number) => {
                   const {
                     _id,
-                    RANK,
+                    Rank,
                     Fancier,
                     Team,
                     Country,
@@ -103,7 +103,7 @@ const EventResults = () => {
                   } = resultItem;
                   return (
                     <tr key={resultIndex}>
-                      <td>{RANK}</td>
+                      <td>{Rank}</td>
                       <td>{Fancier}</td>
                       <td>{Team}</td>
                       <td>
