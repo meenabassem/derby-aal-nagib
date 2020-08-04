@@ -13,7 +13,7 @@ import {ApiLoadedStatus} from "modules/network/ApiLoadedStatus";
 interface EventsAllTableRowEntry {
   _id: string;
   Category: "Race" | "Training";
-  EVENT: string;
+  Event: string;
   Date: string;
   Liberation: string;
   Distance: string;
@@ -112,7 +112,7 @@ const AllEvents = () => {
                   const {
                     _id,
                     Category,
-                    EVENT,
+                    Event,
                     Date,
                     Liberation,
                     Status,
@@ -121,7 +121,7 @@ const AllEvents = () => {
                   return (
                     <tr key={resultIndex}>
                       <td>{Category}</td>
-                      <td>{EVENT}</td>
+                      <td>{Event}</td>
 
                       <td>{Date}</td>
                       <td>{Liberation}</td>

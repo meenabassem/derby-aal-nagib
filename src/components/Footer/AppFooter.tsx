@@ -39,7 +39,7 @@ const AppFooter = () => {
               style={{ margin: 10 }}
               target={"_blank"}
               rel="noopener noreferrer"
-              href="https://www.facebook.com/DERBY-AAL-NAGIB-101202794592601"
+              href="https://twitter.com/DerbyAllNagib"
             >
               <FontAwesomeIcon icon={faTwitter} color={"#848a84"} size={"2x"} />
             </a>
@@ -47,7 +47,7 @@ const AppFooter = () => {
               style={{ margin: 10 }}
               target={"_blank"}
               rel="noopener noreferrer"
-              href="https://www.facebook.com/DERBY-AAL-NAGIB-101202794592601"
+              href="https://www.instagram.com/derbyallnagib/"
             >
               <FontAwesomeIcon
                 icon={faInstagram}

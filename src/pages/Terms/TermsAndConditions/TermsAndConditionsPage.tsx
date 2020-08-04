@@ -16,11 +16,11 @@ const TermsAndConditionsPage = () => {
   return (
     <div className={"terms-and-conditions-top-container page-body-container"}>
       <h3>Terms and conditions VFWCPR – 2019 entrants for 2020 race series</h3>
-      <ol>
+      <ul>
         {terms.map((term, termIndex) => (
           <li key={termIndex}>{term}</li>
         ))}
-      </ol>
+      </ul>
       <div className={"signature"}>
         <p>Managing Director,</p>
         <p>Victoria Falls World Challenge Pigeon Race Ltd,</p>

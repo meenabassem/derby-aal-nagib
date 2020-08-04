@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+$itemSize: 100px;
+$lineHeight: 30px;
+$fontSize: 40px;
+$margin: 10px;
+$paddingTop: 10px;
+
+.countdown-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  .countdown-item {
+    color: #111;
+    font-size: $fontSize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    line-height: $lineHeight;
+    margin: $margin;
+    padding-top: $paddingTop;
+    position: relative;
+    width: $itemSize;
+    height: $itemSize;
+    span {
+      color: #333;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .countdown-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: $itemSize;
+      height: $itemSize;
+    }
+  }
+}
