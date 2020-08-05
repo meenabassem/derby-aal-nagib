@@ -16,6 +16,7 @@ import {AboutPage} from "pages/About/AboutPage";
 import {EventResults} from "pages/Events/EventResults";
 import {AllEvents} from "pages/Events/AllEvents";
 import {EventBasketing} from "pages/Events/EventBasketing";
+import {PrizeMoneyPage} from "pages/Terms/prize/PrizeMoney";
 
 const AppRouter = () => {
   return (
@@ -37,6 +38,7 @@ const AppRouter = () => {
           path="/terms/terms-and-conditions"
           children={<TermsAndConditionsPage />}
         />
+        <Route path="/terms/prize" children={<PrizeMoneyPage />} />
         <Route path="/terms/forms" children={<FormDownloadsPage />} />
         <Route path="/contact/agents" children={<Agents />} />
         <Route path="/contact/enquiries" children={<Enquiries />} />
