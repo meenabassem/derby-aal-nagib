@@ -1,8 +1,16 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Nav, Navbar, NavDropdown} from "react-bootstrap";
 import Logo from "assets/img/logo-transparent.png";
 
+import moment from "moment";
+
 const AppNavBar = () => {
+  const [currentTime, setCurrentTime] = useState<string>();
+  useEffect(() => {
+    setInterval(() => {
+      setCurrentTime(moment().format("MMMM Do YYYY, h:mm:ss A"));
+    }, 1000);
+  }, []);
   return (
     <Navbar
       collapseOnSelect
@@ -69,11 +77,11 @@ const AppNavBar = () => {
           {/*</Nav.Link>*/}
 
           {/*<Nav.Link href="#pricing">Pricing</Nav.Link>*/}
+          <Nav.Item style={{}} className={"nav-link"}>
+            {currentTime}
+          </Nav.Item>
         </Nav>
-        <Navbar.Brand
-          href="/live"
-          style={{ backgroundColor: "red", padding: "5px 20px" }}
-        >
+        <Navbar.Brand href="/live" style={{ padding: "5px 20px" }}>
           Live
         </Navbar.Brand>
       </Navbar.Collapse>
