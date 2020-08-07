@@ -3,14 +3,14 @@ import "App.scss";
 import {Row} from "react-bootstrap";
 
 const _videoLinks: string[] = [
-  "I7MyWWmRg4A",
-  "7HAj46hjZGU",
-  "79TX16AGYBM",
-  "I7MyWWmRg4A",
-  "7HAj46hjZGU",
-  "79TX16AGYBM",
-  "I7MyWWmRg4A",
-  "7HAj46hjZGU",
+  // "I7MyWWmRg4A",
+  // "7HAj46hjZGU",
+  // "79TX16AGYBM",
+  // "I7MyWWmRg4A",
+  // "7HAj46hjZGU",
+  // "79TX16AGYBM",
+  // "I7MyWWmRg4A",
+  // "7HAj46hjZGU",
   // "79TX16AGYBM"
 ];
 

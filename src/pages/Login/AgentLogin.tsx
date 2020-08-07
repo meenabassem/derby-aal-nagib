@@ -1,9 +1,10 @@
 import React from "react";
-import {Formik} from "formik";
 import {useHistory} from "react-router-dom";
 import * as yup from "yup";
 import {Button, Card, Col, Form} from "react-bootstrap";
 import "App.scss";
+import {Form as FormikForm, Formik} from "formik";
+
 
 const schema = yup.object({
   email: yup
@@ -48,7 +49,7 @@ const AgentLoginPage = () => {
               isValid,
               errors
             }) => (
-              <Form noValidate onSubmit={handleSubmit}>
+              <FormikForm noValidate onSubmit={handleSubmit}>
                 <Col>
                   <Form.Group as={Col} controlId={"email"}>
                     <Form.Label>Email</Form.Label>
@@ -90,7 +91,7 @@ const AgentLoginPage = () => {
                     </Button>
                   </Col>
                 </Col>
-              </Form>
+              </FormikForm>
             )}
           </Formik>
         </Card.Body>

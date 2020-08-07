@@ -1,8 +1,9 @@
 import React from "react";
-import {Formik} from "formik";
 import {useHistory} from "react-router-dom";
 import * as yup from "yup";
 import {Button, Card, Col, Form} from "react-bootstrap";
+import {Form as FormikForm, Formik} from "formik";
+
 import "App.scss";
 
 const schema = yup.object({
@@ -48,7 +49,7 @@ const FancierLoginPage = () => {
               isValid,
               errors
             }) => (
-              <Form noValidate onSubmit={handleSubmit}>
+              <FormikForm noValidate onSubmit={handleSubmit}>
                 <Col>
                   <Form.Group as={Col} controlId={"email"}>
                     <Form.Label>Email</Form.Label>
@@ -86,11 +87,11 @@ const FancierLoginPage = () => {
                   {/*</Form.Group>*/}
                   <Col>
                     <Button variant="primary" type="submit">
-                    Login
+                      Login
                     </Button>
                   </Col>
                 </Col>
-              </Form>
+              </FormikForm>
             )}
           </Formik>
         </Card.Body>

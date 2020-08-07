@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import {Alert, Button, Col, Form, Row} from "react-bootstrap";
 import "App.scss";
-import {Formik} from "formik";
+
+import {Form as FormikForm, Formik} from "formik";
 
 import * as yup from "yup";
 
@@ -55,7 +56,7 @@ const Enquiries = () => {
           isValid,
           errors
         }) => (
-          <Form noValidate onSubmit={handleSubmit}>
+          <FormikForm noValidate onSubmit={handleSubmit}>
             <Row>
               <Form.Group as={Col} md={4} controlId={"name"}>
                 <Form.Label>Name</Form.Label>
@@ -120,7 +121,7 @@ const Enquiries = () => {
             <Button variant="primary" type="submit">
               Submit
             </Button>
-          </Form>
+          </FormikForm>
         )}
       </Formik>
     </div>
