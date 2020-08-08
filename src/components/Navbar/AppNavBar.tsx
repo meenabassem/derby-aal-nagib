@@ -77,11 +77,15 @@ const AppNavBar = () => {
           {/*</Nav.Link>*/}
 
           {/*<Nav.Link href="#pricing">Pricing</Nav.Link>*/}
-          <Nav.Item style={{}} className={"nav-link"}>
-            {currentTime}
-          </Nav.Item>
+
         </Nav>
-        <Navbar.Brand href="/live" style={{ padding: "5px 20px" }}>
+        <Nav.Item style={{}} className={"nav-link"}>
+          {currentTime}
+        </Nav.Item>
+        <Navbar.Brand
+          href="/live"
+          style={{ padding: "5px 20px", background: "red", color: "white" }}
+        >
           Live
         </Navbar.Brand>
       </Navbar.Collapse>
