@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Derby AAL Nagib</string>
+    <string name="title_activity_main">Derby AAL Nagib</string>
+    <string name="package_name">app.nagib.derby</string>
+    <string name="custom_url_scheme">app.nagib.derby</string>
+</resources>
