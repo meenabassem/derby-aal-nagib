@@ -2373,13 +2373,18 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@capacitor/cli@2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@capacitor/cli/-/cli-2.2.0.tgz#477b086eff9e158aef72fb3b2807007425d4b951"
-  integrity sha512-JyqBixUOIfJ1FEuT6v9B9yoejL1+Y7tk/eTiKXs4wUOSb2RTwbXUfy4CozteaY72UP9TvvL+duXk3qeyny7/vQ==
+"@capacitor/android@2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@capacitor/android/-/android-2.4.0.tgz#e75b01b5ce5b60f4ef400c7867e81fd2c1782b47"
+  integrity sha512-5sJicZjtuBRgtmBuV1kvWnIjlu7bnw2TGGp62UXf0ZrjvMUCYSFHBqIHZ8neffW7a3xM5cdGMUlxJ+HfA9ntAg==
+
+"@capacitor/cli@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@capacitor/cli/-/cli-2.4.0.tgz#f4b46d894eb0147fab2f2ed88dfd843baa9bf19d"
+  integrity sha512-zThbRb83odSVhPfGmR6dAsNx4yDKSJ6N11eClh5NGYiY4UR4uMoE0QicU0VSp+n62ggONmQjQl9Zhadl7ZQHwQ==
   dependencies:
     chalk "^2.3.0"
-    commander "^2.12.2"
+    commander "^4.1.1"
     compare-versions "^3.1.0"
     fs-extra "^4.0.3"
     inquirer "6.3.1"
@@ -2390,10 +2395,10 @@
     which "^1.3.0"
     xml2js "^0.4.19"
 
-"@capacitor/core@2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@capacitor/core/-/core-2.2.0.tgz#60f7b2126a5a223cb1ede055a65df6ad0d719f4b"
-  integrity sha512-ClxXjOUCF0wZpznZI6f6uXK2LLzWBx5Ly/g7Hqu8R8wNdaKYoh83eMuT+m5G1gfxhcALAAJNUhHccnCW3ohftg==
+"@capacitor/core@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@capacitor/core/-/core-2.4.0.tgz#5f3741153d87901e5c14c9037b6634bd24df5e77"
+  integrity sha512-zL+3yKjLNkU6QwIB/Fp9rg+qDLsO44/ibrIgaZZRXcDCwScwanjXCgco/jXQl3jGFcZzanm59wKhMcJr9xQH0Q==
   dependencies:
     tslib "^1.9.0"
 
@@ -4863,7 +4868,7 @@ combined-stream@^1.0.6, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
-commander@^2.11.0, commander@^2.12.2, commander@^2.20.0:
+commander@^2.11.0, commander@^2.20.0:
   version "2.20.3"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
