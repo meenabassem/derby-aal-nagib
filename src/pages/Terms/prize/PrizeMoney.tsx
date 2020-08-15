@@ -13,7 +13,7 @@ interface Race {
   raceEntries: RaceEntry[];
 }
 const PrizeMoneyPage = () => {
-  const _races: Race[] = [
+  const _racesEn: Race[] = [
     {
       raceTitle: "First race prizes El Dabaa 300 km",
       raceEntries: [
@@ -120,20 +120,134 @@ const PrizeMoneyPage = () => {
       ]
     }
   ];
-  const [races, setRaces] = useState<Race[]>([]);
+  const _racesAr: Race[] = [
+    {
+      raceTitle: "الجوائز الماليه للسباق الاول الضبعه 300 كم ",
+      raceEntries: [
+        { prize: "20000", currency: "جم", place: "الاول" },
+        { prize: "15000", currency: "جم", place: "الثانى" },
+        { prize: "10000", currency: "جم", place: "الثالث" },
+        { prize: "7500", currency: "جم", place: "الرابع" },
+        { prize: "5000", currency: "جم", place: "الخامس" },
+        { prize: "2500", currency: "جم", place: "من السادس للعاشر" },
+        { prize: "1000", currency: "جم", place: "من الحادى عشر للاربعين" }
+      ]
+    },
+    {
+      raceTitle: "الجوائز الماليه للسباق الثاني فوكه 300 كم",
+      raceEntries: [
+        { prize: "30000", currency: "جم", place: "الاول" },
+        { prize: "20000", currency: "جم", place: "الثانى" },
+        { prize: "15000", currency: "جم", place: "الثالث" },
+        { prize: "1000", currency: "جم", place: "الرابع" },
+        { prize: "7500", currency: "جم", place: "الخامس" },
+        { prize: "4500", currency: "جم", place: "من السادس للعاشر" },
+        { prize: "1500", currency: "جم", place: "من الحادى عشر للعشرين" },
+        {
+          prize: "1000",
+          currency: "جم",
+          place: "من الحادى و العشرين الى الخمسين"
+        }
+      ]
+    },
+    {
+      raceTitle: "الجوائز الماليه للسباق الثالث مرسي مطروح 420 كم",
+      raceEntries: [
+        { prize: "40000", currency: "جم", place: "الاول" },
+        { prize: "30000", currency: "جم", place: "الثانى" },
+        { prize: "25000", currency: "جم", place: "الثالث" },
+        { prize: "15000", currency: "جم", place: "الرابع" },
+        { prize: "10000", currency: "جم", place: "الخامس" },
+        { prize: "5000", currency: "جم", place: "من السادس للعاشر" },
+        { prize: "2500", currency: "جم", place: "من الحادى عشر للعشرين" },
+        {
+          prize: "1000",
+          currency: "جم",
+          place: "من الحادى و العشرين الى الخمسين"
+        }
+      ]
+    },
+    {
+      raceTitle: "الجوائز الماليه للسباق الرابع النصف نهائي زاوية شماس 500 كم",
+      raceEntries: [
+        { prize: "50000", currency: "جم", place: "الاول" },
+        { prize: "40000", currency: "جم", place: "الثانى" },
+        { prize: "30000", currency: "جم", place: "الثالث" },
+        { prize: "20000", currency: "جم", place: "الرابع" },
+        { prize: "15000", currency: "جم", place: "الخامس" },
+        { prize: "6000", currency: "جم", place: "من السادس للعاشر" },
+        { prize: "3500", currency: "جم", place: "من الحادى عشر للعشرين" },
+        {
+          prize: "1000",
+          currency: "جم",
+          place: "من الحادى و العشرين الى الخمسين"
+        }
+      ]
+    },
+    {
+      raceTitle: " سباق السلوم السباق النهائي 620 كم",
+      raceEntries: [
+        { prize: "100000", currency: "جم", place: "الاول" },
+        { prize: "75000", currency: "جم", place: "الثانى" },
+        { prize: "50000", currency: "جم", place: "الثالث" },
+        { prize: "35000", currency: "جم", place: "الرابع" },
+        { prize: "25000", currency: "جم", place: "الخامس" },
+        { prize: "10000", currency: "جم", place: "من السادس للعاشر" },
+        { prize: "5000", currency: "جم", place: "من الحادى عشر للعشرين" },
+        {
+          prize: "1500",
+          currency: "جم",
+          place: "من الواحد و العشرين الى الخمسين"
+        }
+      ]
+    },
+    {
+      raceTitle: "جوائز الاس بيجون",
+      raceEntries: [
+        { prize: "50000", currency: "جم", place: "الاول" },
+        { prize: "40000", currency: "جم", place: "الثانى" },
+        { prize: "30000", currency: "جم", place: "الثالث" },
+        { prize: "20000", currency: "جم", place: "الرابع" },
+        { prize: "15000", currency: "جم", place: "الخامس" },
+        { prize: "6000", currency: "جم", place: "من السادس للعاشر" },
+        { prize: "1500", currency: "جم", place: "من الحادى عشر للعشرين" },
+        {
+          prize: "1000",
+          currency: "جم",
+          place: "من الواحد و العشرين الى الاربعين"
+        }
+      ]
+    },
+    {
+      raceTitle: "جوائز الفرق",
+      raceEntries: [
+        { prize: "30000", currency: "جم", place: "الاول" },
+        { prize: "20000", currency: "جم", place: "الثانى" },
+        { prize: "15000", currency: "جم", place: "الثالث" },
+        { prize: "10000", currency: "جم", place: "الرابع" },
+        { prize: "5000", currency: "جم", place: "الخامس" },
+        { prize: "3000", currency: "جم", place: "من السادس للعاشر" },
+        { prize: "2500", currency: "جم", place: "من الحادى عشر للعشرين" }
+      ]
+    }
+  ];
+
+  const [racesEn, setRacesEn] = useState<Race[]>([]);
+  const [racesAr, setRacesAr] = useState<Race[]>([]);
 
   useEffect(() => {
     setTimeout(() => {
       // to simulate API
-      setRaces(_races);
+      setRacesEn(_racesEn);
+      setRacesAr(_racesAr);
     }, 100);
   }, []);
   return (
     <div className={"prize-money-top-container page-body-container"}>
       <h3>Prize Money</h3>
-      {races?.length ? (
-        <div>
-          {races.map((raceEntry: Race, raceIndex) => (
+      {racesEn?.length ? (
+        <div className={"races-prizes-en"}>
+          {racesEn.map((raceEntry: Race, raceIndex) => (
             <div key={raceIndex}>
               <h4>{raceEntry.raceTitle}</h4>
               {raceEntry.raceEntries?.length ? (
@@ -150,7 +264,47 @@ const PrizeMoneyPage = () => {
                         (raceEntry: RaceEntry, raceEntryIndex: number) => (
                           <tr key={raceEntryIndex}>
                             <td>{raceEntry.place}</td>
-                            <td>{raceEntry.prize} Euro</td>
+                            <td>
+                              {raceEntry.prize} {raceEntry.currency}
+                            </td>
+                          </tr>
+                        )
+                      )}
+                    </tbody>
+                  </Table>
+                </Col>
+              ) : (
+                <span>No winners in that race!</span>
+              )}
+            </div>
+          ))}
+        </div>
+      ) : (
+        <span>No Races found!</span>
+      )}
+
+      {racesAr?.length ? (
+        <div className={"races-prizes-ar"}>
+          {racesAr.map((raceEntry: Race, raceIndex) => (
+            <div key={raceIndex}>
+              <h4>{raceEntry.raceTitle}</h4>
+              {raceEntry.raceEntries?.length ? (
+                <Col lg={4}>
+                  <Table striped bordered hover size="sm">
+                    <thead>
+                      <tr>
+                        <th>Place</th>
+                        <th>Prize Money</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {raceEntry.raceEntries.map(
+                        (raceEntry: RaceEntry, raceEntryIndex: number) => (
+                          <tr key={raceEntryIndex}>
+                            <td>{raceEntry.place}</td>
+                            <td>
+                              {raceEntry.prize} {raceEntry.currency}
+                            </td>
                           </tr>
                         )
                       )}

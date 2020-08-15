@@ -8,4 +8,18 @@
       margin-bottom: 0;
     }
   }
+  .races-prizes-en{
+
+  }
+  .races-prizes-ar{
+    h4{
+      text-align: right;
+    }
+    &>div{
+      direction: rtl;
+      td{
+        text-align: right;
+      }
+    }
+  }
 }

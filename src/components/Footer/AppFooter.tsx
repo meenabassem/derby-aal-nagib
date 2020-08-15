@@ -2,13 +2,15 @@ import React from "react";
 import {Navbar, Row} from "react-bootstrap";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFacebook, faInstagram, faTwitter, faYoutube} from "@fortawesome/free-brands-svg-icons";
+import {Capacitor} from "@capacitor/core";
 
 const AppFooter = () => {
+  const colorVariant = Capacitor.isNative ? "dark" : "light";
   return (
     <Navbar
       sticky="bottom"
-      bg="light"
-      variant="light"
+      bg={colorVariant}
+      variant={colorVariant}
       style={{ boxShadow: "0 0px 5px #888888" }}
     >
       <Row style={{ textAlign: "center", display: "block", flex: 1 }}>
