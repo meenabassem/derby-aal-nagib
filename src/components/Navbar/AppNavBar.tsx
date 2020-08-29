@@ -12,7 +12,8 @@ const AppNavBar = () => {
       setCurrentTime(moment().format("MMMM Do YYYY, h:mm:ss A"));
     }, 1000);
   }, []);
-  const colorVariant = Capacitor.isNative ? "dark" : "light";
+  // const colorVariant = Capacitor.isNative ? "dark" : "light";
+  const colorVariant =  "dark" ;
   return (
     <Navbar
       collapseOnSelect
