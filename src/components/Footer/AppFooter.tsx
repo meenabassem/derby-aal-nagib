@@ -1,11 +1,11 @@
 import React from "react";
 import {Navbar, Row} from "react-bootstrap";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faFacebook, faInstagram, faTwitter, faYoutube} from "@fortawesome/free-brands-svg-icons";
-import {Capacitor} from "@capacitor/core";
+import {faApple, faFacebook, faGooglePlay, faInstagram, faTwitter, faYoutube} from "@fortawesome/free-brands-svg-icons";
 
 const AppFooter = () => {
-  const colorVariant = Capacitor.isNative ? "dark" : "light";
+  // const colorVariant = Capacitor.isNative ? "dark" : "light";
+  const colorVariant = "dark";
   return (
     <Navbar
       sticky="bottom"
@@ -53,6 +53,30 @@ const AppFooter = () => {
             >
               <FontAwesomeIcon
                 icon={faInstagram}
+                color={"#848a84"}
+                size={"2x"}
+              />
+            </a>
+            <a
+              style={{ margin: 10 }}
+              target={"_blank"}
+              rel="noopener noreferrer"
+              href="https://www.instagram.com/derbyallnagib/"
+            >
+              <FontAwesomeIcon
+                icon={faGooglePlay}
+                color={"#848a84"}
+                size={"2x"}
+              />
+            </a>
+            <a
+              style={{ margin: 10 }}
+              target={"_blank"}
+              rel="noopener noreferrer"
+              href="https://www.instagram.com/derbyallnagib/"
+            >
+              <FontAwesomeIcon
+                icon={faApple}
                 color={"#848a84"}
                 size={"2x"}
               />

@@ -12,7 +12,8 @@ const AppNavBar = () => {
       setCurrentTime(moment().format("MMMM Do YYYY, h:mm:ss A"));
     }, 1000);
   }, []);
-  const colorVariant = Capacitor.isNative ? "dark" : "light";
+  // const colorVariant = Capacitor.isNative ? "dark" : "light";
+  const colorVariant = "dark";
   return (
     <Navbar
       collapseOnSelect
@@ -97,7 +98,16 @@ const AppNavBar = () => {
 
           {/*<Nav.Link href="#pricing">Pricing</Nav.Link>*/}
         </Nav>
-        <Nav.Item style={{}} className={"nav-link"}>
+        <Nav.Item
+          style={
+            colorVariant === "dark"
+              ? {
+                  color: "rgba(255, 255, 255, 0.5)"
+                }
+              : {}
+          }
+          className={"nav-link"}
+        >
           {currentTime}
         </Nav.Item>
         <Navbar.Brand

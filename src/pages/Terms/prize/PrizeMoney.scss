@@ -1,5 +1,4 @@
 .prize-money-top-container {
-
   h3 {
     color: #848a84;
   }
@@ -8,19 +7,18 @@
       margin-bottom: 0;
     }
   }
-  .races-prizes-en{
-font-family:"Copperplate";
-
+  .races-prizes-en {
+    font-family: "Copperplate";
   }
-  .races-prizes-ar{
-@import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
-font-family: 'Droid Arabic Kufi', serif;
-    h4{
+  .races-prizes-ar {
+    @import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+    font-family: "Droid Arabic Kufi", serif;
+    h4 {
       text-align: right;
     }
-    &>div{
+    & > div {
       direction: rtl;
-      td{
+      td {
         text-align: right;
       }
     }

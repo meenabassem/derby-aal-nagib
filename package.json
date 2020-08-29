@@ -2,6 +2,19 @@
   "name": "derby-aal-nagib",
   "version": "0.0.2",
   "private": true,
+  "scripts": {
+    "notes": "Push: \"amplify push\" will build all your local backend resources and provision it in the cloud\n\"amplify publish\" will build all your local backend and frontend resources (if you have hosting category added) and provision it in the cloud\n",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "serve_production": "serve -s build -l 4000",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "amplify_push": "amplify push",
+    "amplify_publish": "amplify publish",
+    "capacitor-copy": "yarn build && npx cap copy",
+    "capacitor-sync-android": "npx cap sync android",
+    "capacitor-open-android": "npx cap open android"
+  },
   "dependencies": {
     "@aws-amplify/ui-react": "^0.2.12",
     "@capacitor/android": "2.4.0",
@@ -47,19 +60,6 @@
     "serve": "^11.3.2",
     "typescript": "3.8.3",
     "yup": "^0.29.1"
-  },
-  "scripts": {
-    "notes": "Push: \"amplify push\" will build all your local backend resources and provision it in the cloud\n\"amplify publish\" will build all your local backend and frontend resources (if you have hosting category added) and provision it in the cloud\n",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "serve_production": "serve -s build -l 4000",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "amplify_push": "amplify push",
-    "amplify_publish": "amplify publish",
-    "capacitor-copy": "yarn build && npx cap copy",
-    "capacitor-sync-android": "npx cap sync android",
-    "capacitor-open-android": "npx cap open android"
   },
   "eslintConfig": {
     "extends": "react-app"
