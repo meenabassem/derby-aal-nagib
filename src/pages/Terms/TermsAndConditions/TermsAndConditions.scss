@@ -11,14 +11,18 @@
   }
 
   .terms-en {
-    font-family:" Bradley Hand", cursive;
+    font-family:"Copperplate";
+font-size:large;
 
   }
   .terms-ar {
     direction: rtl;
     text-align: right;
-    @import url(http://fonts.googleapis.com/earlyaccess/amiri.css);
-font-family: 'Amiri', serif;
+   
+
+@import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+font-family: 'Droid Arabic Kufi', serif;
+
     font-size: larger;
   }
 }
