@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import "App.scss";
 import {Image, ListGroup} from "react-bootstrap";
 import PdfIcon from "assets/img/pdficon.png";
+import {NetworkHelper} from "modules/network/NetworkHelper";
 
 interface FormData {
   language?: string;
@@ -12,91 +13,21 @@ interface FormGroup {
   title: string;
   formEntries: FormData[];
 }
-
-const _formData: FormGroup[] = [
-  {
-    title: "Entry Forms",
-    formEntries: [
-      {
-        label: "Download Entry Form 2020",
-        language: "English",
-        downloadUrl:
-          "https://www.victoriafallswcpr.com/downloads/Entry%20Form%202021%20(English).pdf"
-      },
-      {
-        label: "Download Entry Form 2020",
-        language: "Arabic",
-        downloadUrl:
-          "https://www.victoriafallswcpr.com/downloads/Entry%20Form%202021%20(English).pdf"
-      }
-    ]
-  },
-  {
-    title: "Terms And Conditions",
-    formEntries: [
-      {
-        label: "Download Terms & conditions 2020",
-        language: "English",
-        downloadUrl:
-          "https://www.victoriafallswcpr.com/downloads/Entry%20Form%202021%20(English).pdf"
-      },
-      {
-        label: "Download Terms & conditions 2021",
-        language: "English",
-        downloadUrl:
-          "https://www.victoriafallswcpr.com/downloads/Entry%20Form%202021%20(English).pdf"
-      },
-      {
-        label: "Download Terms & conditions 2020",
-        language: "Arabic",
-        downloadUrl:
-          "https://www.victoriafallswcpr.com/downloads/Entry%20Form%202021%20(English).pdf"
-      },
-      {
-        label: "Download Terms & conditions 2021",
-        language: "Arabic",
-        downloadUrl:
-          "https://www.victoriafallswcpr.com/downloads/Entry%20Form%202021%20(English).pdf"
-      }
-    ]
-  },
-  {
-    title: "Prize Money",
-    formEntries: [
-      {
-        label: "Download Prize Money 2020",
-        language: "English",
-        downloadUrl:
-          "https://www.victoriafallswcpr.com/downloads/Entry%20Form%202021%20(English).pdf"
-      },
-      {
-        label: "Download Prize Money 2020",
-        language: "Arabic",
-        downloadUrl:
-          "https://www.victoriafallswcpr.com/downloads/Entry%20Form%202021%20(English).pdf"
-      },
-      {
-        label: "Download Prize Money 2021",
-        language: "English",
-        downloadUrl:
-          "https://www.victoriafallswcpr.com/downloads/Entry%20Form%202021%20(English).pdf"
-      },
-      {
-        label: "Download Prize Money 2021",
-        language: "Arabic",
-        downloadUrl:
-          "https://www.victoriafallswcpr.com/downloads/Entry%20Form%202021%20(English).pdf"
-      }
-    ]
-  }
-];
-
 const FormDownloadsPage = () => {
   const [formData, setFormData] = useState<FormGroup[]>([]);
+
   useEffect(() => {
-    setTimeout(() => {
-      setFormData(_formData);
-    }, 500);
+    NetworkHelper.post("/Lookups", {
+      Lookups: ["Form_Downloads"]
+    })
+      .then(value => {
+        if (value.data?.Form_Downloads?.length) {
+          setFormData(value.data.Form_Downloads);
+        }
+      })
+      .catch(reason => {
+        console.log("Failed to load Forms and downloads", reason);
+      });
   }, []);
   return (
     <div className={"page-body-container"}>
