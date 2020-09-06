@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import "App.scss";
 import "./PrizeMoney.scss";
 import {Col, Table} from "react-bootstrap";
+import {NetworkHelper} from "modules/network/NetworkHelper";
 
 interface RaceEntry {
   place: string;
@@ -236,12 +237,29 @@ const PrizeMoneyPage = () => {
   const [racesAr, setRacesAr] = useState<Race[]>([]);
 
   useEffect(() => {
-    setTimeout(() => {
-      // to simulate API
-      setRacesEn(_racesEn);
-      setRacesAr(_racesAr);
-    }, 100);
+    NetworkHelper.post("/Lookups", {
+      Lookups: ["Prize_Money_EN", "Prize_Money_AR"]
+    })
+      .then(value => {
+        if (value.data?.Prize_Money_EN?.length) {
+          setRacesEn(value.data.Prize_Money_EN);
+        }
+        if (value.data?.Prize_Money_AR?.length) {
+          setRacesAr(value.data.Prize_Money_AR);
+        }
+      })
+      .catch(reason => {
+        console.log("Failed to load Terms and conditions", reason);
+      });
   }, []);
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     // to simulate API
+  //     setRacesEn(_racesEn);
+  //     setRacesAr(_racesAr);
+  //   }, 100);
+  // }, []);
   return (
     <div className={"prize-money-top-container page-body-container"}>
       <h3>Prize Money</h3>
@@ -280,7 +298,7 @@ const PrizeMoneyPage = () => {
           ))}
         </div>
       ) : (
-        <span>No Races found!</span>
+        <></>
       )}
 
       {racesAr?.length ? (
@@ -318,7 +336,7 @@ const PrizeMoneyPage = () => {
           ))}
         </div>
       ) : (
-        <span>No Races found!</span>
+        <></>
       )}
     </div>
   );
