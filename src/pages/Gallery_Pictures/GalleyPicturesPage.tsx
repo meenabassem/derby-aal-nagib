@@ -1,114 +1,43 @@
 import React, {useEffect, useState} from "react";
-import {shuffle} from "lodash";
 import "App.scss";
 import {Card, Col, Row} from "react-bootstrap";
 import {GalleryPictureModal} from "pages/Gallery_Pictures/GalleryPictureModal";
-
-const _albumImages: string[] = [
-  "https://www.victoriafallswcpr.com/images/gallery/Activities/Boyd%208.JPG",
-  "https://www.victoriafallswcpr.com/images/gallery/Activities/Canoeing_10.jpg",
-  "https://www.victoriafallswcpr.com/images/gallery/Activities/Chobe%20Safari%20Lodge%20A.jpg",
-  "https://www.victoriafallswcpr.com/images/gallery/Activities/Devils%20Pool%20Vic%20Falls%20natGeo.jpg",
-  "https://www.victoriafallswcpr.com/images/gallery/Activities/Flying%20Fox%20with%20Bridge.jpg",
-  "https://www.victoriafallswcpr.com/images/gallery/Loft/zzxl.JPG",
-  "https://www.victoriafallswcpr.com/images/gallery/Activities/IMG_0558.JPG",
-  "https://www.victoriafallswcpr.com/images/gallery/Activities/Microlight.jpg",
-  "https://www.victoriafallswcpr.com/images/gallery/Loft/zzxt.JPG",
-  "https://www.victoriafallswcpr.com/images/gallery/Loft/zzxo.jpg",
-  "https://www.victoriafallswcpr.com/images/gallery/Loft/zzxll.jpg"
-];
-const _albums: Album[] = [
-  {
-    image:
-      "https://www.victoriafallswcpr.com/images/gallery/Accommodation/thumbs/mainthumb.jpg",
-    id: "accomodation",
-    title: "Accomodation"
-  },
-  {
-    image:
-      "https://www.victoriafallswcpr.com/images/gallery/Activities/thumbs/mainthumb.jpg",
-    id: "activities",
-    title: "Activities"
-  },
-  {
-    image:
-      "https://www.victoriafallswcpr.com/images/gallery/Jan%202017%20Final%20Race%20Week/thumbs/mainthumb.jpg",
-    id: "accomodation",
-    title: "Final Year"
-  },
-  {
-    image:
-      "https://www.victoriafallswcpr.com/images/gallery/Activities/thumbs/mainthumb.jpg",
-    id: "activities",
-    title: "Activities"
-  },
-  {
-    image:
-      "https://www.victoriafallswcpr.com/images/gallery/Accommodation/thumbs/mainthumb.jpg",
-    id: "accomodation",
-    title: "Accomodation"
-  },
-  {
-    image:
-      "https://www.victoriafallswcpr.com/images/gallery/Activities/thumbs/mainthumb.jpg",
-    id: "activities",
-    title: "Activities"
-  },
-  {
-    image:
-      "https://www.victoriafallswcpr.com/images/gallery/Accommodation/thumbs/mainthumb.jpg",
-    id: "accomodation",
-    title: "Accomodation"
-  },
-  {
-    image:
-      "https://www.victoriafallswcpr.com/images/gallery/Activities/thumbs/mainthumb.jpg",
-    id: "activities",
-    title: "Activities"
-  },
-  {
-    image:
-      "https://www.victoriafallswcpr.com/images/gallery/Accommodation/thumbs/mainthumb.jpg",
-    id: "accomodation",
-    title: "Accomodation"
-  }
-].map((i: Album) => ({
-  ...i,
-  id: `${i.id}_${new Date().getTime() * Math.random()}` //remove that later when list is from BE
-}));
+import {NetworkHelper} from "modules/network/NetworkHelper";
 
 interface Album {
   id?: number | string;
   title: string;
-  image: any;
+  coverImage: any;
+  albumImages?: string[];
 }
 
 const GalleryPictureModalProps = () => {
   const [albums, setAlbums] = useState<Album[]>([]);
   const [images, setImages] = useState<string[]>([]);
   const [currentAlbum, setCurrentAlbum] = useState<Album>();
-
   const [isPictureModalVisible, setPictureModalVisible] = useState<boolean>(
     false
   );
   const [clickedImage, setClickedImage] = useState<string>("");
 
   useEffect(() => {
-    setTimeout(() => {
-      //simulate load albums from API
-      setAlbums(_albums);
-      if (_albums?.length) {
-        //load the images for first album by default
-        onAlbumClick(_albums[0]);
-      }
-    }, 1000);
+    NetworkHelper.post("/Lookups", {
+      Lookups: ["Albums"]
+    })
+      .then(value => {
+        if (value.data?.Albums?.length) {
+          setAlbums(value.data?.Albums);
+          onAlbumClick(value.data?.Albums[0]);
+        }
+      })
+      .catch(reason => {
+        console.log("Failed to load Albums", reason);
+      });
   }, []);
+
   const onAlbumClick = (album: Album) => {
-    // console.log("Use album ID to get images for that album");
-    setTimeout(() => {
-      setImages(shuffle(_albumImages));
-      setCurrentAlbum(album);
-    }, 1000);
+    setImages(album?.albumImages || []);
+    setCurrentAlbum(album);
   };
   const onImageClick = (imageUrl: string) => {
     setClickedImage(imageUrl);
@@ -129,7 +58,7 @@ const GalleryPictureModalProps = () => {
                   key={_album.id}
                   onClick={() => onAlbumClick(_album)}
                 >
-                  <Card.Img variant="top" src={_album.image} />
+                  <Card.Img variant="top" src={_album.coverImage} />
                   <Card.Body>
                     <Card.Text>{_album.title}</Card.Text>
                   </Card.Body>

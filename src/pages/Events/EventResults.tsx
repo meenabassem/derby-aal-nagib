@@ -119,7 +119,13 @@ const EventResults = () => {
 
                       <td>{Pigeon}</td>
                       <td>{Arrival}</td>
-                      <td>{resultItem["Speed [m/min]"]}</td>
+                      <td>
+                        {Number(
+                          parseFloat(
+                            String(resultItem["Speed [m/min]"])
+                          ).toFixed(2)
+                        )}
+                      </td>
                       <td>{resultItem["Pigeon Name"]}</td>
                     </tr>
                   );

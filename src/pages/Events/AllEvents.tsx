@@ -7,6 +7,7 @@ import {NetworkHelper} from "modules/network/NetworkHelper";
 import * as yup from "yup";
 import {Form as FormikForm, Formik} from "formik";
 import {ApiLoadedStatus} from "modules/network/ApiLoadedStatus";
+import moment from "moment";
 
 //Race & Training results
 
@@ -123,7 +124,7 @@ const AllEvents = () => {
                       <td>{Category}</td>
                       <td>{Event}</td>
 
-                      <td>{Date}</td>
+                      <td>{moment(Date).format("Do MMMM YYYY")}</td>
                       <td>{Liberation}</td>
                       <td>{Distance}</td>
                       <td>{Status}</td>
