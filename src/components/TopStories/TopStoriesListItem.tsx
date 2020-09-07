@@ -14,7 +14,7 @@ const TopStoriesListItem: React.FC<TopStoriesListItemProps> = (
       <Card.Header as="h5">{title}</Card.Header>
       <Card.Body>
         {/*<Card.Title>Special title treatment</Card.Title>*/}
-        <Card.Text>{body}</Card.Text>
+        <Card.Text style={{  whiteSpace: "pre-wrap"}}>{body}</Card.Text>
       </Card.Body>
     </Card>
   );
