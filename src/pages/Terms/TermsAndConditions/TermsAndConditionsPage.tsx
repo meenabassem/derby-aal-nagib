@@ -33,7 +33,7 @@ const TermsAndConditionsPage = () => {
     <div className={"terms-and-conditions-top-container page-body-container"}>
       <h3>Terms & Conditions (2020) :</h3>
       <ul className={"terms-en"}>
-        {terms_EN?.length &&
+        {terms_EN?.length ? (
           terms_EN.map((term: TermsAndConditionsItem, termIndex) => (
             <div key={termIndex}>
               <li>{term.item}</li>
@@ -47,10 +47,13 @@ const TermsAndConditionsPage = () => {
                 <></>
               )}
             </div>
-          ))}
+          ))
+        ) : (
+          <></>
+        )}
       </ul>
       <ul className={"terms-ar"}>
-        {terms_AR?.length &&
+        {terms_AR?.length ? (
           terms_AR.map((term: TermsAndConditionsItem, termIndex) => (
             <div key={termIndex}>
               <li>{term.item}</li>
@@ -64,7 +67,10 @@ const TermsAndConditionsPage = () => {
                 <></>
               )}
             </div>
-          ))}
+          ))
+        ) : (
+          <></>
+        )}
       </ul>
       <div className={"signature"}>
         <p>Managing Director</p>
