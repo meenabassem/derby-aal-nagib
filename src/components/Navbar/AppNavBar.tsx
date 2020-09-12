@@ -82,9 +82,9 @@ const AppNavBar = () => {
           </NavDropdown>
           {!Capacitor.isNative ? (
             <NavDropdown title="Login" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/login/agent">
-                Agent Login
-              </NavDropdown.Item>
+              {/*<NavDropdown.Item href="/login/agent">*/}
+              {/*  Agent Login*/}
+              {/*</NavDropdown.Item>*/}
               <NavDropdown.Item href="/login/fancier">
                 Fancier Login
               </NavDropdown.Item>
