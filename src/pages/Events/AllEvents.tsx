@@ -94,55 +94,60 @@ const AllEvents = () => {
         );
       case "LOADED":
         return (
-          <Table striped bordered hover size="sm">
-            <thead>
-              <tr>
-                <th>Category</th>
-                <th>Event</th>
-                <th>Date</th>
-                <th>Liberation</th>
-                <th>Distance</th>
-                <th>Status</th>
-                <th></th>
-              </tr>
-            </thead>
+          <div style={{ overflowX: "scroll" }}>
+            <Table striped bordered hover size="sm">
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Event</th>
+                  <th>Date</th>
+                  <th>Liberation</th>
+                  <th>Distance</th>
+                  <th>Status</th>
+                  <th></th>
+                </tr>
+              </thead>
 
-            <tbody>
-              {allEvents.map(
-                (resultItem: EventsAllTableRowEntry, resultIndex: number) => {
-                  const {
-                    _id,
-                    Category,
-                    Event,
-                    Date,
-                    Liberation,
-                    Status,
-                    Distance
-                  } = resultItem;
-                  return (
-                    <tr key={resultIndex}>
-                      <td>{Category}</td>
-                      <td>{Event}</td>
+              <tbody>
+                {allEvents.map(
+                  (resultItem: EventsAllTableRowEntry, resultIndex: number) => {
+                    const {
+                      _id,
+                      Category,
+                      Event,
+                      Date,
+                      Liberation,
+                      Status,
+                      Distance
+                    } = resultItem;
+                    return (
+                      <tr key={resultIndex}>
+                        <td>{Category}</td>
+                        <td>{Event}</td>
 
-                      <td>{moment(Date).format("Do MMMM YYYY")}</td>
-                      <td>{Liberation}</td>
-                      <td>{Distance}</td>
-                      <td>{Status}</td>
-                      <td>
-                        <div style={{ display: "flex" }}>
-                          <ActionButton
-                            buttonType={"Basketing"}
-                            eventId={_id}
-                          />
-                          <ActionButton buttonType={"Results"} eventId={_id} />
-                        </div>
-                      </td>
-                    </tr>
-                  );
-                }
-              )}
-            </tbody>
-          </Table>
+                        <td>{moment(Date).format("Do MMMM YYYY")}</td>
+                        <td>{Liberation}</td>
+                        <td>{Distance}</td>
+                        <td>{Status}</td>
+                        <td>
+                          <div style={{ display: "flex" }}>
+                            <ActionButton
+                              buttonType={"Basketing"}
+                              eventId={_id}
+                            />
+                            <ActionButton
+                              buttonType={"Results"}
+                              eventId={_id}
+                            />
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  }
+                )}
+              </tbody>
+            </Table>
+          </div>
         );
       case "LOADING":
         return <div>Loading ....</div>;

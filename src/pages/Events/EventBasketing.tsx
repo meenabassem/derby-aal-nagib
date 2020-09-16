@@ -75,49 +75,51 @@ const EventBasketing = () => {
         );
       case "LOADED":
         return (
-          <Table striped bordered hover size="sm">
-            <thead>
-              <tr>
-                <th>Fancier</th>
-                <th>Team</th>
-                <th>Country</th>
-                <th>Pigeon</th>
-                <th>Pigeon Name</th>
-                <th>Basket Time</th>
-              </tr>
-            </thead>
+          <div style={{ overflowX: "scroll" }}>
+            <Table striped bordered hover size="sm">
+              <thead>
+                <tr>
+                  <th>Fancier</th>
+                  <th>Team</th>
+                  <th>Country</th>
+                  <th>Pigeon</th>
+                  <th>Pigeon Name</th>
+                  <th>Basket Time</th>
+                </tr>
+              </thead>
 
-            <tbody>
-              {allResults.map(
-                (
-                  resultItem: ResultsBasketingTableRowEntry,
-                  resultIndex: number
-                ) => {
-                  const { Fancier, Team, Country, Pigeon } = resultItem;
-                  return (
-                    <tr key={resultIndex}>
-                      <td>{Fancier}</td>
-                      <td>{Team}</td>
-                      <td>
-                        {" "}
-                        <ReactCountryFlag
-                          countryCode={Country}
-                          svg
-                          style={{
-                            fontSize: "2em",
-                            lineHeight: "2em"
-                          }}
-                        />
-                      </td>
-                      <td>{Pigeon}</td>
-                      <td>{resultItem["Pigeon Name"]}</td>
-                      <td>{resultItem["Basket Time"]}</td>
-                    </tr>
-                  );
-                }
-              )}
-            </tbody>
-          </Table>
+              <tbody>
+                {allResults.map(
+                  (
+                    resultItem: ResultsBasketingTableRowEntry,
+                    resultIndex: number
+                  ) => {
+                    const { Fancier, Team, Country, Pigeon } = resultItem;
+                    return (
+                      <tr key={resultIndex}>
+                        <td>{Fancier}</td>
+                        <td>{Team}</td>
+                        <td>
+                          {" "}
+                          <ReactCountryFlag
+                            countryCode={Country}
+                            svg
+                            style={{
+                              fontSize: "2em",
+                              lineHeight: "2em"
+                            }}
+                          />
+                        </td>
+                        <td>{Pigeon}</td>
+                        <td>{resultItem["Pigeon Name"]}</td>
+                        <td>{resultItem["Basket Time"]}</td>
+                      </tr>
+                    );
+                  }
+                )}
+              </tbody>
+            </Table>
+          </div>
         );
       case "LOADING":
         return <div>Loading ....</div>;

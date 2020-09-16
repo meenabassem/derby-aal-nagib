@@ -75,64 +75,69 @@ const EventResults = () => {
         );
       case "LOADED":
         return (
-          <Table striped bordered hover size="sm">
-            <thead>
-              <tr>
-                <th>Rank</th>
-                <th>Fancier</th>
-                <th>Team</th>
-                <th>Country</th>
-                <th>Pigeon</th>
-                <th>Arrival</th>
-                <th>Speed [m/min]</th>
-                <th>Pigeon Name</th>
-              </tr>
-            </thead>
+          <div style={{ overflowX: "scroll" }}>
+            <Table striped bordered hover size="sm">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Fancier</th>
+                  <th>Team</th>
+                  <th>Country</th>
+                  <th>Pigeon</th>
+                  <th>Arrival</th>
+                  <th>Speed [m/min]</th>
+                  <th>Pigeon Name</th>
+                </tr>
+              </thead>
 
-            <tbody>
-              {allResults.map(
-                (resultItem: ResultsAllTableRowEntry, resultIndex: number) => {
-                  const {
-                    _id,
-                    Rank,
-                    Fancier,
-                    Team,
-                    Country,
-                    Pigeon,
-                    Arrival
-                  } = resultItem;
-                  return (
-                    <tr key={resultIndex}>
-                      <td>{Rank}</td>
-                      <td>{Fancier}</td>
-                      <td>{Team}</td>
-                      <td>
-                        <ReactCountryFlag
-                          countryCode={Country}
-                          svg
-                          style={{
-                            fontSize: "2em",
-                            lineHeight: "2em"
-                          }}
-                        />
-                      </td>
+              <tbody>
+                {allResults.map(
+                  (
+                    resultItem: ResultsAllTableRowEntry,
+                    resultIndex: number
+                  ) => {
+                    const {
+                      _id,
+                      Rank,
+                      Fancier,
+                      Team,
+                      Country,
+                      Pigeon,
+                      Arrival
+                    } = resultItem;
+                    return (
+                      <tr key={resultIndex}>
+                        <td>{Rank}</td>
+                        <td>{Fancier}</td>
+                        <td>{Team}</td>
+                        <td>
+                          <ReactCountryFlag
+                            countryCode={Country}
+                            svg
+                            style={{
+                              fontSize: "2em",
+                              lineHeight: "2em"
+                            }}
+                          />
+                        </td>
 
-                      <td>{Pigeon}</td>
-                      <td>{Arrival}</td>
-                      <td>
-                        {Number(
-                          parseFloat(
-                            String(resultItem["Speed [m/min]"])
-                          ).toFixed(2)
-                        )}
-                      </td>
-                      <td>{resultItem["Pigeon Name"]}</td>
-                    </tr>
-                  );
-                }
-              )}
-            </tbody>
-          </Table>
+                        <td>{Pigeon}</td>
+                        <td>{Arrival}</td>
+                        <td>
+                          {Number(
+                            parseFloat(
+                              String(resultItem["Speed [m/min]"])
+                            ).toFixed(2)
+                          )}
+                        </td>
+                        <td>{resultItem["Pigeon Name"]}</td>
+                      </tr>
+                    );
+                  }
+                )}
+              </tbody>
+            </Table>
+          </div>
         );
       case "LOADING":
         return <div>Loading ....</div>;
