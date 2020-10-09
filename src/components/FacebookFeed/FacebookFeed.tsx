@@ -1,8 +1,8 @@
 import React from "react";
 
 const FacebookFeed = () => {
-  const containerWidth = window?.innerWidth > 500 ? 500 : window.innerWidth;
-  const widthInIframe = containerWidth < 460 ? containerWidth + 40 : 500;
+  const containerWidth = window?.innerWidth > 500 ? 500 : window.innerWidth - 30;
+  const widthInIframe = containerWidth < 460 ? containerWidth + 40 : containerWidth;
   return (
     <iframe
       title={"Facebook page feed"}

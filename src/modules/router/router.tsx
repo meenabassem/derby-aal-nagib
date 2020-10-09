@@ -17,13 +17,18 @@ import {EventResults} from "pages/Events/EventResults";
 import {AllEvents} from "pages/Events/AllEvents";
 import {EventBasketing} from "pages/Events/EventBasketing";
 import {PrizeMoneyPage} from "pages/Terms/prize/PrizeMoney";
+import {AdminPanel} from "../../AdminPanel/AdminPanelIndex";
 
 const AppRouter = () => {
+  const shouldShowHeaderAndFooter = window?.location?.href.indexOf("admin") === -1
+
   return (
     <Router>
-      <AppNavBar />
+
+      {shouldShowHeaderAndFooter?<AppNavBar/>:<></>}
       <Switch>
         {/*Basketing Events*/}
+        <Route path={"/admin"} children={<AdminPanel/>}/>
         <Route path="/results/events/:id" children={<EventResults />} />
         <Route path="/results/basketing/:id" children={<EventBasketing />} />
         <Route path="/Events/all" children={<AllEvents />} />
@@ -53,7 +58,7 @@ const AppRouter = () => {
           <HomePage />
         </Route>
       </Switch>
-      <AppFooter />
+      {shouldShowHeaderAndFooter?<AppFooter/>:<></>}
     </Router>
   );
 };
