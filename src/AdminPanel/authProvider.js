@@ -11,12 +11,12 @@ export const authProvider = {
         .then((res) => {
           if (res?.data) {
             localStorage.setItem("role", "admin");
-            localStorage.removeItem("not_authenticated");
+            localStorage.setItem("is_authenticated",true);
             localStorage.setItem("login", "admin");
             localStorage.setItem("user", username);
             return resolve();
           } else {
-            localStorage.setItem("not_authenticated", true);
+            localStorage.setItem("is_authenticated", false);
             return reject();
           }
         })
@@ -27,7 +27,7 @@ export const authProvider = {
 
     if (false) {
       if (username === "login" && password === "password") {
-        localStorage.removeItem("not_authenticated");
+        localStorage.removeItem("is_authenticated");
         localStorage.removeItem("role");
         localStorage.setItem("login", "login");
         localStorage.setItem("user", "John Doe");
@@ -39,7 +39,7 @@ export const authProvider = {
       }
       if (username === "user" && password === "password") {
         localStorage.setItem("role", "user");
-        localStorage.removeItem("not_authenticated");
+        localStorage.removeItem("is_authenticated");
         localStorage.setItem("login", "user");
         localStorage.setItem("user", "Jane Doe");
         localStorage.setItem(
@@ -50,7 +50,7 @@ export const authProvider = {
       }
       if (username === "admin" && password === "password") {
         localStorage.setItem("role", "admin");
-        localStorage.removeItem("not_authenticated");
+        localStorage.removeItem("is_authenticated");
         localStorage.setItem("login", "admin");
         localStorage.setItem("user", "Dennis Nedry");
         localStorage.setItem(
@@ -59,12 +59,12 @@ export const authProvider = {
         );
         return Promise.resolve();
       }
-      localStorage.setItem("not_authenticated", true);
+      localStorage.setItem("is_authenticated", true);
       return Promise.reject();
     }
   },
   logout: () => {
-    localStorage.setItem("not_authenticated", true);
+    localStorage.setItem("is_authenticated", false);
     localStorage.removeItem("role");
     localStorage.removeItem("login");
     localStorage.removeItem("user");
@@ -77,7 +77,7 @@ export const authProvider = {
       : Promise.resolve();
   },
   checkAuth: () => {
-    return localStorage.getItem("not_authenticated")
+    return localStorage.getItem("is_authenticated") !== "true"
       ? Promise.reject()
       : Promise.resolve();
   },

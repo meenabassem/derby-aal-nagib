@@ -1,6 +1,6 @@
 // @ts-ignore
 import {Admin, Resource} from "react-admin";
-import React from "react";
+import React, {useEffect} from "react";
 import DataProviders from "./DataProviders";
 import {EventCreate, PostIcon} from "./AdminEvents";
 import {EventDetails, EventList} from "./events";
@@ -10,24 +10,31 @@ import {authProvider} from "./authProvider";
 import {LiveVideoList} from "./LiveVideo/LiveVideoList";
 import {LivelookupEdit} from "./LiveVideo/LiveVideoEdit";
 
-const AdminPanel = () => (
-  <Admin dataProvider={DataProviders} authProvider={authProvider}>
-    <Resource
-      name="Events"
-      list={EventList}
-      show={EventDetails}
-      create={EventCreate}
-      icon={PostIcon}
-    />
-    <Resource name="EventResults" create={EventResultCreate} />
-    <Resource name="EventBasketing" create={EventBasketingCreate} />
-    <Resource
-      name="LiveLookups"
-      options={{ label: "Live" }}
-      list={LiveVideoList}
-      edit={LivelookupEdit}
-    />
-    <Resource name="tags" />
-  </Admin>
-);
+const AdminPanel = () => {
+  useEffect(() => {
+    if (localStorage.getItem("is_authenticated") !== "true") {
+      localStorage.setItem("is_authenticated", false);
+    }
+  }, []);
+  return (
+    <Admin dataProvider={DataProviders} authProvider={authProvider}>
+      <Resource
+        name="Events"
+        list={EventList}
+        show={EventDetails}
+        create={EventCreate}
+        icon={PostIcon}
+      />
+      <Resource name="EventResults" create={EventResultCreate} />
+      <Resource name="EventBasketing" create={EventBasketingCreate} />
+      <Resource
+        name="LiveLookups"
+        options={{ label: "Live" }}
+        list={LiveVideoList}
+        edit={LivelookupEdit}
+      />
+      <Resource name="tags" />
+    </Admin>
+  );
+};
 export { AdminPanel };
