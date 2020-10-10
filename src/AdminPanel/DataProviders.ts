@@ -9,33 +9,51 @@ const httpClient = fetchUtils.fetchJson;
 
 export default {
   getList: (resource: any, params: any) => {
-    const { page, perPage } = params.pagination;
-    const { field, order } = params.sort;
-    const query = {
-      sort: JSON.stringify([field, order]),
-      range: JSON.stringify([(page - 1) * perPage, page * perPage - 1]),
-      filter: JSON.stringify(params.filter),
-    };
-    const url = `${apiUrl}/${resource}?${stringify(query)}`;
+    switch (resource) {
+      case "LiveLookups":
+        return httpClient(`${apiUrl}/${resource}`).then(
+          ({ headers, json }: any) => ({
+            data: json,
+            // total: parseInt(headers?.get('content-range')?.split('/')?.pop(), 10),
+            total: json?.length,
+          })
+        );
+      default:
+        const { page, perPage } = params.pagination;
+        const { field, order } = params.sort;
+        const query = {
+          sort: JSON.stringify([field, order]),
+          range: JSON.stringify([(page - 1) * perPage, page * perPage - 1]),
+          filter: JSON.stringify(params.filter),
+        };
+        const url = `${apiUrl}/${resource}?${stringify(query)}`;
 
-    return httpClient(url).then(({ headers, json }: any) => ({
-      data: json?.map((i: any) => ({ ...i, id: i._id })),
-      // total: parseInt(headers?.get('content-range')?.split('/')?.pop(), 10),
-      total: json?.length,
-    }));
+        return httpClient(url).then(({ headers, json }: any) => ({
+          data: json?.map((i: any) => ({ ...i, id: i._id })),
+          // total: parseInt(headers?.get('content-range')?.split('/')?.pop(), 10),
+          total: json?.length,
+        }));
+    }
   },
 
   getOne: (resource: any, params: any) => {
-    // console.log("get one", resource, params);
-    // return new Promise<{ data: any }>((resolve, reject) =>
-    //   resolve({ data: { id: 0 } })
-    // );
-    return httpClient(`${apiUrl}/${resource}/${params?.id}`).then(
-      ({ json }: any) => ({
-        data: json,
-        id: json?._id,
-      })
-    );
+    switch (resource) {
+      case "LiveLookups":
+        return httpClient(`${apiUrl}/${resource}`).then(
+          ({ headers, json }: any) => ({
+            data: json,
+            // total: parseInt(headers?.get('content-range')?.split('/')?.pop(), 10),
+            total: json?.length,
+          })
+        );
+      default:
+        return httpClient(`${apiUrl}/${resource}/${params?.id}`).then(
+          ({ json }: any) => ({
+            data: json,
+            id: json?._id,
+          })
+        );
+    }
   },
 
   getMany: (resource: any, params: any) => {
