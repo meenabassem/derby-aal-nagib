@@ -16,16 +16,16 @@ const LivePage = () => {
   const [livePageData, setLivePageData] = useState<LivePageData>();
   useEffect(() => {
     NetworkHelper.post("/Lookups", {
-      Lookups: ["LIVE"]
+      Lookups: ["LIVE"],
     })
-      .then(value => {
+      .then((value) => {
         if (value.data?.LIVE?.isAvailable) {
           setLivePageData(value.data.LIVE);
         } else {
           setLiveDataMessage("No live data available now");
         }
       })
-      .catch(reason => {
+      .catch((reason) => {
         console.log("Failed to load Live page Data", reason);
         setLiveDataMessage("Failed to load live data, please try again later");
       });
@@ -41,7 +41,7 @@ const LivePage = () => {
           style={{
             display: "block",
             margin: "auto",
-            padding: "1rem"
+            padding: "1rem",
           }}
           width={containerWidth}
           height="315"
@@ -54,16 +54,33 @@ const LivePage = () => {
         <></>
       )}
       {livePageData.facebook ? (
+        // <iframe
+        //   src={livePageData.facebook}
+        //   width={containerWidth}
+        //   height="488"
+        //   style={{ display: "block", margin: "auto", padding: "1rem" }}
+        //   scrolling="no"
+        //   frameBorder="0"
+        //   // allowTransparency={true}
+        //   allow="encrypted-media"
+        //   // allowFullScreen="true"
+        // ></iframe>
+
         <iframe
           src={livePageData.facebook}
           width={containerWidth}
-          height="488"
-          style={{ display: "block", margin: "auto", padding: "1rem" }}
-          scrolling="no"
+          height="700"
+          style={{
+            display: "block",
+            margin: "auto",
+            padding: "1rem",
+            border: "none",
+            overflow: "hidden",
+          }}
+          scrolling={"no"}
           frameBorder="0"
-          // allowTransparency={true}
-          allow="encrypted-media"
-          // allowFullScreen="true"
+          allowFullScreen={true}
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
         ></iframe>
       ) : (
         <></>
