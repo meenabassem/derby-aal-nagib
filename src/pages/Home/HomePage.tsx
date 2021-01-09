@@ -17,16 +17,16 @@ const HomePage = () => {
   //Image slider Images are loaded here
   useEffect(() => {
     NetworkHelper.post("/Lookups", {
-      Lookups: ["Banner_Images"]
+      Lookups: ["Banner_Images"],
     })
-      .then(value => {
+      .then((value) => {
         if (value.data?.Banner_Images?.length) {
           setImageSliderImages(value.data.Banner_Images);
         } else {
           console.log("Failed to load Banner Images");
         }
       })
-      .catch(reason => {
+      .catch((reason) => {
         console.log("Failed to load banner images", reason);
       });
   }, []);
@@ -34,10 +34,20 @@ const HomePage = () => {
   //Top Stories, and Final Race Date
   useEffect(() => {
     NetworkHelper.get("/Events", { params: { req_limit: 3 } })
-      .then(value => {
+      .then((value) => {
         if (value?.data && value.data?.length) {
           //Set final race date, from latest event
-          if (value.data[0]?.Date && new Date(value.data[0]?.Date)) {
+
+          if (
+            value.data[0]?.Date &&
+            new Date(value.data[0]?.Date) &&
+            new Date(value.data[0]?.Date).getTime() > new Date().getTime() &&
+            Math.ceil(
+              // @ts-ignore
+              Math.abs(new Date(value.data[0]?.Date) - new Date()) /
+                (1000 * 60 * 60 * 24)
+            ) < 30
+          ) {
             setCountDownTimeDate(value.data[0]?.Date);
           }
           //map the events from response to stories
@@ -51,14 +61,14 @@ const HomePage = () => {
               "Do MMMM YYYY"
             )}\nLiberation: ${storyItem?.Liberation}\nDistance: ${
               storyItem?.Distance
-            }`
+            }`,
           }));
           //Set Top Stories
           setTopStories(stories);
         } else {
         }
       })
-      .catch(reason => {});
+      .catch((reason) => {});
   }, []);
 
   return (
