@@ -3,6 +3,7 @@ import {fetchUtils} from "react-admin";
 // @ts-ignore
 import {stringify} from "query-string";
 import {baseURL} from "../modules/network/NetworkHelper";
+import moment from "moment";
 
 const apiUrl = baseURL; // 'https://my.api.com/';
 const httpClient = fetchUtils.fetchJson;
@@ -129,7 +130,12 @@ export default {
       case "Events":
         return httpClient(`${apiUrl}/${resource}`, {
           method: "POST",
-          body: JSON.stringify({ ...params.data, Result: [], Basketing: [] }),
+          body: JSON.stringify({
+            ...params.data,
+            Date: new Date(moment(params?.data?.Date).format()),
+            Result: [],
+            Basketing: [],
+          }),
         }).then(({ json }: any) => ({
           data: { ...params.data, id: json?.id },
         }));
