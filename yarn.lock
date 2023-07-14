@@ -6084,6 +6084,11 @@ domhandler@^2.3.0:
   dependencies:
     domelementtype "1"
 
+dompurify@^2.4.3:
+  version "2.4.7"
+  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-2.4.7.tgz#277adeb40a2c84be2d42a8bcd45f582bfa4d0cfc"
+  integrity sha512-kxxKlPEDa6Nc5WJi+qRgPbOAbgTpSULL+vI3NUXsZMlkJxTqYI9wg5ZTay2sFrdZRWHPWNi+EdAhcJf81WtoMQ==
+
 domutils@1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/domutils/-/domutils-1.5.1.tgz#dcd8488a26f563d61079e48c9f7b7e32373682cf"
@@ -7902,6 +7907,11 @@ inflection@~1.12.0:
   version "1.12.0"
   resolved "https://registry.yarnpkg.com/inflection/-/inflection-1.12.0.tgz#a200935656d6f5f6bc4dc7502e1aecb703228416"
   integrity sha1-ogCTVlbW9fa8TcdQLhrstwMihBY=
+
+inflection@~1.13.1:
+  version "1.13.4"
+  resolved "https://registry.yarnpkg.com/inflection/-/inflection-1.13.4.tgz#65aa696c4e2da6225b148d7a154c449366633a32"
+  integrity sha512-6I/HUDeYFfuNCVS3td055BaXBwKYuzw7K3ExVMStBowKo9oOAMJIXIHvdyR3iboTCp1b+1i5DSkIZTcwIktuDw==
 
 inflight@^1.0.4:
   version "1.0.6"
@@ -11806,16 +11816,17 @@ ra-language-english@^3.9.2:
     ra-core "^3.9.2"
 
 ra-ui-materialui@^3.9.2:
-  version "3.9.2"
-  resolved "https://registry.yarnpkg.com/ra-ui-materialui/-/ra-ui-materialui-3.9.2.tgz#320389edf952963cf1fc741d7dad36ed263441b1"
-  integrity sha512-va24EyvK5nQ4tWfVd6Sm/5kJxu1ovrm02rxX7tR9Cw28rhn4tlEHrH0VPSJnLbq42a1qlb2wS92VcOtaUvaD1w==
+  version "3.19.12"
+  resolved "https://registry.yarnpkg.com/ra-ui-materialui/-/ra-ui-materialui-3.19.12.tgz#4a6f54741aab52bca42d6cee6f9c8339c93126f3"
+  integrity sha512-8Zz88r5yprmUxOw9/F0A/kjjVmFMb2n+sjpel8fuOWtS6y++JWonDsvTwo4yIuSF9mC0fht3f/hd2KEHQdmj6Q==
   dependencies:
     autosuggest-highlight "^3.1.1"
     classnames "~2.2.5"
     connected-react-router "^6.5.2"
     css-mediaquery "^0.1.2"
+    dompurify "^2.4.3"
     downshift "3.2.7"
-    inflection "~1.12.0"
+    inflection "~1.13.1"
     jsonexport "^2.4.1"
     lodash "~4.17.5"
     prop-types "^15.7.0"
